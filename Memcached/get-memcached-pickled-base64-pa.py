@@ -7,7 +7,8 @@ def retrieve2(key):
     serialized = ''
     for i in range(17):
         serialized = serialized + result[key + '-' + str(i)]
-    return base64.b64decode(serialized)
+    return pickle.loads(base64.b64decode(serialized))
+
 
 client = Client(('localhost', 11211))
 print retrieve2("flag2")

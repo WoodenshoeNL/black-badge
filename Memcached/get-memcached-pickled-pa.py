@@ -6,7 +6,7 @@ def retrieve(key):
     serialized = ''
     for i in range(12):
         serialized = serialized + result[key + '-' + str(i)]
-    return serialized
+    return pickle.loads(serialized)
 
 client = Client(('localhost', 11211))
 print retrieve("flag")

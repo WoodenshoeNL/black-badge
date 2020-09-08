@@ -8,7 +8,7 @@ def retrieve3(key):
     serialized = ''
     for i in range(25):
         serialized = serialized + result[key + '-' + str(i)]
-    return binascii.unhexlify(serialized)
+    return pickle.loads(binascii.unhexlify(serialized))
 
 client = Client(('localhost', 11211))
 print retrieve3("flag3")
