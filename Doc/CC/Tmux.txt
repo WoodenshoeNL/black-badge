@@ -1,0 +1,49 @@
+
+Create new session:
+tmux new -s attack
+
+Detach session:
+(ctrl + b) - d
+
+List sessions:
+tmux list-sessions
+
+Attach session:
+tmux a -t attack
+
+################################################################
+
+Create new window:
+(ctrl + b) - c
+
+Next window:
+(ctrl + b) - n
+
+Previous window:
+(ctrl + b) - p
+
+Rename window:
+(ctrl + b) - ,
+
+Kill window:
+(ctrl + b) - &
+
+List windows:
+(ctrl + b) - w
+
+Select window by name:
+(ctrl + b) - '
+
+################################################################
+
+Panes - split vertically:
+(ctrl + b) - %
+
+Panes - split horizontally:
+(ctrl + b) - "
+
+Convert Pane to window:
+(ctrl + b) - !
+
+Kill Pane:
+(ctrl + b) - x

