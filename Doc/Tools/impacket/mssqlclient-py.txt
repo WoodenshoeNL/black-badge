@@ -1,0 +1,7 @@
+
+Impackets tools:
+https://github.com/SecureAuthCorp/impacket
+git clone https://github.com/SecureAuthCorp/impacket.git
+
+Connect to MSSQL server with mssqlclient:
+mssqlclient.py ARCHETYPE/sql_svc@10.10.10.27 -windows-auth

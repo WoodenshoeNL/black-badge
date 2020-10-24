@@ -1,0 +1,18 @@
+
+Upgrade shell - 01:
+SHELL=/bin/bash script -q /dev/null
+Ctrl-Z
+stty raw -echo
+fg
+reset
+xterm
+
+
+
+upgrade shell - 02:
+SHELL=/bin/bash script -q /dev/null
+
+
+
+upgrade shell with python:
+python3 -c "import pty;pty.spawn('/bin/bash')"

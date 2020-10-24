@@ -1,0 +1,8 @@
+
+
+Impackets tools:
+https://github.com/SecureAuthCorp/impacket
+git clone https://github.com/SecureAuthCorp/impacket.git
+
+login with psexec.py:
+psexec.py administrator@10.10.10.27

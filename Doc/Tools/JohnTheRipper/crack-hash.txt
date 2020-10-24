@@ -1,0 +1,5 @@
+
+
+
+Crack hash from Zip file with wordlist:
+john hash —fork=4 -w=~/rockyou-75.txt

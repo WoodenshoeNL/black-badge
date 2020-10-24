@@ -1,0 +1,3 @@
+
+Host current folder with python webserver:
+sudo python3 -m http.server 80
