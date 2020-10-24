@@ -21,4 +21,4 @@ dirbuster:
 
 
 Rockyou.txt:
-/opt/useful/SecLists/Passwords/Leaked-Databases/rockyou.txt 
+/opt/useful/SecLists/Passwords/Leaked-Databases/rockyou.txt

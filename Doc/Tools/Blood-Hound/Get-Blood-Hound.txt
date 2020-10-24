@@ -1,0 +1,8 @@
+
+install Blood-Hound python ingestor:
+pip install bloodhound
+
+
+Install Blood-Hound:
+sudo apt install neo4j
+sudo apt install bloodhound

