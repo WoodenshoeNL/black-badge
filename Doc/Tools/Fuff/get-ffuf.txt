@@ -1,0 +1,14 @@
+
+install with apt-get:
+sudo apt-get install ffuf
+
+
+
+
+Get latest, install from source with go:
+
+get Go:
+sudo apt install golang
+
+install ffuf with go:
+go get github.com/ffuf/ffuf
