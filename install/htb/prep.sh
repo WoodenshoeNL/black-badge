@@ -22,7 +22,7 @@ cp ~/my_data/g/black-badge/Doc/CC/Reverse-Shell-scripts/php-reverse-shell.php ./
 cd ~/htb
 mkdir rsa 2>/dev/null
 cd rsa
-ssh-keygen -t rsa -b 4096 -C "htb@woodenshoe" -f ./htb_rsa -q -N ""
+ssh-keygen -t rsa -b 4096 -C "htb@woodenshoe" -f ./htb_rsa -q -N "" <<<y 2>&1 >/dev/null
 
 
 
@@ -51,5 +51,5 @@ sed -i "s/10.10.10.10/$ip/g" ~/htb/script/*
 sed -i "s/10.10.10.10/$ip/g" ~/htb/reverse-shell/*
 
 
-#end
+#end ########
 cd ~/htb
