@@ -1,0 +1,21 @@
+
+change digest file to this format:
+$2a$04$gLX3.eb.sPNURq3Y87bx/eUC9Ysw6mZhi1HAWvy07DWYyw9zYI3.W
+
+
+Dictionary attack:
+hashcat -m 3200 -a 0 digest.txt 1000000-password-seclists.txt
+
+
+Explanation
+-m 1000 : Bcrypt hash mode
+-a 0 : Dictionary attack mode
+
+Mask Mode attack:
+hashcat -m 3200 digest.txt -a 3 -1 ?l?d ?1?1?1
+
+
+Explanation
+-m 3200        : Bcrypt hash mode
+-a 3            : Mask mode
+-1 ?l?d ?1?1?1             : l (small L) signifies group (a-z) and d (minor D) signifies group (0-9)

@@ -1,0 +1,6 @@
+
+Crack password:
+hashcat -m 1800 --force hash /opt/useful/SecLists/Passwords/Leaked-Databases/rockyou.txt
+
+Show Crack password:
+hashcat -m 1800 --force hash /opt/useful/SecLists/Passwords/Leaked-Databases/rockyou.txt --show

@@ -1,0 +1,15 @@
+
+
+Dictionary attack:
+hashcat -m 1000 -a 0 digest.txt 1000000-password-seclists.txt
+
+Explanation
+-m 1000 : NTLM hash mode
+-a 0 : Dictionary attack mode
+
+
+Mask mode attack:
+Explanation
+-m 1000    : NTLM hash mode
+-a 3    : Mask mode
+-1 ?l?d ?1?1?1?1?1     : l (small L) signifies group (a-z) and d (minor D) signifies group (0-9)
