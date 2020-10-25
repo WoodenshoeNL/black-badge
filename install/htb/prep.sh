@@ -4,7 +4,7 @@ ip="10.10.14.9"
 
 #pull newest black-badge
 cd ~/my_data/g/black-badge
-git pull
+git pull >/dev/null
 
 #setup dir
 cd ~
