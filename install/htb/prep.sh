@@ -51,5 +51,18 @@ sed -i "s/10.10.10.10/$1/g" ~/htb/script/*
 sed -i "s/10.10.10.10/$1/g" ~/htb/reverse-shell/*
 
 
+
+################################################################
+# Install Software
+################################################################
+
+#insall ffuf
+sudo apt-get install ffuf
+
+#install golang
+sudo apt install golang
+
+
+
 #end ########
 echo "cd ~/htb"
