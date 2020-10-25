@@ -3,3 +3,9 @@
 
 Crack hash from Zip file with wordlist:
 john hash —fork=4 -w=~/rockyou-75.txt
+
+
+Crack md5crypt has from passwd:
+john --format=md5crypt --wordlist=/wordlist/rockyou.txt hash
+
+

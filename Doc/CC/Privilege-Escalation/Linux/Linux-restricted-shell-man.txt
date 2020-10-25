@@ -1,7 +1,9 @@
 
 Escape restricted shell with Man:
 man man
-
 !bash
 
+Escape restricted shell with vi:
+vi
+:! /bin/bash
 

