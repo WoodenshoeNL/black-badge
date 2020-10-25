@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ip="10.10.14.9"
+#ip="10.10.14.9"
 
 #pull newest black-badge
 cd ~/my_data/g/black-badge
@@ -45,10 +45,10 @@ chmod +x ./add-pubkey.sh
 
 
 #change ip addresses in scripts
-sed -i "s/10.10.10.10/$ip/g" ~/htb/script/*
+sed -i "s/10.10.10.10/$1/g" ~/htb/script/*
 
 #change ip addresses in reverse shell
-sed -i "s/10.10.10.10/$ip/g" ~/htb/reverse-shell/*
+sed -i "s/10.10.10.10/$1/g" ~/htb/reverse-shell/*
 
 
 #end ########
