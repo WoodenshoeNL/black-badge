@@ -22,3 +22,14 @@ mkdir rsa
 cd rsa
 ssh-keygen -t rsa -b 4096 -C "htb@woodenshoe" -f ./htb_rsa -q -N ""
 
+
+
+
+################################################################
+#script dir
+cd ~/htb
+mkdir script
+cd script
+
+#copy add public key
+cp ~/my_data/g/black-badge/Doc/CC/Reverse-Shell-scripts/php-reverse-shell.php ./prss.php

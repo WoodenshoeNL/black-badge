@@ -1,3 +1,4 @@
+#!/bin/bash
 
 mkdir /root/.ssh/
 chmod 600 /root/.ssh
