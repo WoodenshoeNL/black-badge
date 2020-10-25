@@ -6,3 +6,51 @@ ffuf -w /path/to/wordlist -u https://target/FUZZ
 -u    = target (FUZZ will be replaced by word from wordlist)
 
 
+HTB Parrot simple example:
+ffuf -u http://10.10.10.48/FUZZ -w /usr/share/dirb/wordlists/big.txt
+
+
+
+
+
+Recursion and recursion-depth:
+ffuf -u http://10.10.10.48/FUZZ -w /usr/share/dirb/wordlists/big.txt -recursion -recursion-depth 3
+
+
+search for extension .bak:
+ffuf -u http://10.10.10.48/FUZZ -w /usr/share/dirb/wordlists/big.txt -recursion -e .bak
+
+
+run in silent mode:
+ffuf -u http://10.10.10.48/FUZZ -w /usr/share/dirb/wordlists/big.txt -s
+
+use silent mode with tee to output in a file:
+ffuf -u http://10.10.10.48/FUZZ -w /usr/share/dirb/wordlists/big.txt -s | tee ./output.txt
+
+
+
+
+Add Cookie:
+ffuf -u http://10.10.10.48/FUZZ -w /usr/share/dirb/wordlists/big.txt -b "NAME1=VALUE1;NAME2=VALUE2;NAME3=VALUE3"
+
+Add Headers:
+ffuf -u http://10.10.10.48/FUZZ -w /usr/share/dirb/wordlists/big.txt -H "NAME1=VALUE1;NAME2=VALUE2;NAME3=VALUE3"
+
+Use POST HTTP method:
+ffuf -u http://10.10.10.48/FUZZ -w /usr/share/dirb/wordlists/big.txt -X POST
+
+
+
+MATCHER OPTIONS:
+  -mc              Match HTTP status codes, or "all" for everything. (default: 200,204,301,302,307,401,403)
+  -ml              Match amount of lines in response
+  -mr              Match regexp
+  -ms              Match HTTP response size
+  -mw              Match amount of words in response
+
+FILTER OPTIONS:
+  -fc              Filter HTTP status codes from response. Comma separated list of codes and ranges
+  -fl              Filter by amount of lines in response. Comma separated list of line counts and ranges
+  -fr              Filter regexp
+  -fs              Filter HTTP response size. Comma separated list of sizes and ranges
+  -fw              Filter by amount of words in response. Comma separated list of word counts and ranges

@@ -60,9 +60,10 @@ sed -i "s/10.10.10.10/$1/g" ~/htb/reverse-shell/*
 sudo apt-get install ffuf
 
 #install golang
-sudo apt install golang
+#sudo apt install golang
 
-
+#install newest version of ffuf with golang
+go get github.com/ffuf/ffuf
 
 #end ########
 echo "cd ~/htb"
