@@ -8,19 +8,19 @@ git pull
 
 #setup dir
 cd ~
-mkdir htb
+mkdir htb 2>/dev/null
 cd htb
 
 #copy reverse shells
 cd ~/htb
-mkdir reverse-shell
+mkdir reverse-shell 2>/dev/null
 cd reverse-shell
 cp ~/my_data/g/black-badge/Doc/CC/Reverse-Shell-scripts/php-reverse-shell.php ./prss.php
 
 
 #generate keypair for target logon
 cd ~/htb
-mkdir rsa
+mkdir rsa 2>/dev/null
 cd rsa
 ssh-keygen -t rsa -b 4096 -C "htb@woodenshoe" -f ./htb_rsa -q -N ""
 
@@ -30,7 +30,7 @@ ssh-keygen -t rsa -b 4096 -C "htb@woodenshoe" -f ./htb_rsa -q -N ""
 ################################################################
 #script dir
 cd ~/htb
-mkdir script
+mkdir script 2>/dev/null
 cd script
 
 #copy add public key script
@@ -49,3 +49,7 @@ sed -i "s/10.10.10.10/$ip/g" ~/htb/script/*
 
 #change ip addresses in reverse shell
 sed -i "s/10.10.10.10/$ip/g" ~/htb/reverse-shell/*
+
+
+#end
+cd ~/htb
