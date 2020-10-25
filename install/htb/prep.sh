@@ -52,4 +52,4 @@ sed -i "s/10.10.10.10/$1/g" ~/htb/reverse-shell/*
 
 
 #end ########
-cd ~/htb
+echo "cd ~/htb"
