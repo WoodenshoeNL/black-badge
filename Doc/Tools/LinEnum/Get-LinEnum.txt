@@ -1,0 +1,3 @@
+
+Get linEnum:
+git clone https://github.com/rebootuser/LinEnum.git

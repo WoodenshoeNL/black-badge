@@ -53,6 +53,18 @@ sed -i "s/10.10.10.10/$1/g" ~/htb/reverse-shell/*
 
 
 ################################################################
+# add wordlists
+################################################################
+cd ~/htb
+mkdir wordlist 2>/dev/null
+cd wordlist
+
+#download seclist
+git clone https://github.com/danielmiessler/SecLists.git
+
+
+
+################################################################
 # Install Software
 ################################################################
 
