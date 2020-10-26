@@ -74,6 +74,8 @@ sudo apt-get install ffuf
 #install golang
 #sudo apt install golang
 
+
+echo "go get ffuf"
 #install newest version of ffuf with golang
 go get github.com/ffuf/ffuf
 
