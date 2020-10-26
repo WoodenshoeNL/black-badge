@@ -69,7 +69,7 @@ git clone https://github.com/danielmiessler/SecLists.git
 ################################################################
 
 #insall ffuf
-sudo apt-get install ffuf
+#sudo apt-get install ffuf
 
 #install golang
 #sudo apt install golang
