@@ -1,0 +1,12 @@
+
+get a shell with meterpreter
+
+run local exploit suggester in meterpreter:
+run post/multi/recon/local_exploit_suggester
+
+
+background the meterpreter shell:
+background
+
+choose the exploit and run this on the meterpreter session
+Make sure to set the LHOST
