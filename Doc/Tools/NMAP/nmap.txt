@@ -1,0 +1,11 @@
+
+
+Version and Syn scan:
+sudo nmap -sV -sS 10.10.10.7
+
+Output scan to file:
+sudo nmap -sV -sS 10.10.10.7 -oN name.txt
+
+
+Run vulnerability scripts on specific port:
+sudo nmap -sV -sS 10.10.10.7 -oN beep-80 -A -p80 --script vuln

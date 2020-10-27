@@ -59,8 +59,9 @@ cd ~/htb
 mkdir wordlist 2>/dev/null
 cd wordlist
 
-#download seclist
-git clone https://github.com/danielmiessler/SecLists.git
+#add download seclist script
+echo "git clone https://github.com/danielmiessler/SecLists.git 2>/dev/null" > download-seclist.sh
+chmod +x download-seclist.sh
 
 
 
@@ -68,14 +69,12 @@ git clone https://github.com/danielmiessler/SecLists.git
 # Install Software
 ################################################################
 
-#insall ffuf
-#sudo apt-get install ffuf
+
 
 #install golang
 #sudo apt install golang
 
 
-echo "go get ffuf"
 #install newest version of ffuf with golang
 go get github.com/ffuf/ffuf
 
