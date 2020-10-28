@@ -9,7 +9,7 @@ ffuf -w /path/to/wordlist -u https://target/FUZZ
 HTB Parrot simple example:
 ffuf -u http://10.10.10.48/FUZZ -w /usr/share/dirb/wordlists/big.txt
 
-ffuf -w /usr/share/dirb/wordlists/big.txt -u http://10.10.10.8/FUZZ
+ffuf -w /usr/share/dirb/wordlists/big.txt -u http://10.10.10.14/FUZZ
 
 
 

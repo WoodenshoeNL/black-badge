@@ -37,6 +37,10 @@ cd script
 cp ~/my_data/g/black-badge/K/Battle/Red/add-pubkey.sh ./add-pubkey.sh
 chmod +x ./add-pubkey.sh
 
+#copy create venom script:
+cp ~/my_data/g/black-badge/K/Battle/Red/create-venom.sh ./create-venom.sh
+chmod +x ./create-venom.sh
+
 
 
 

