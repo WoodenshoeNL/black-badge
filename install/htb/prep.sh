@@ -68,6 +68,19 @@ echo "git clone https://github.com/danielmiessler/SecLists.git 2>/dev/null" > do
 chmod +x download-seclist.sh
 
 
+################################################################
+# add Enum
+################################################################
+cd ~/htb
+mkdir enum 2>/dev/null
+cd enum
+
+#add download seclist script
+echo "git clone https://github.com/rebootuser/LinEnum.git 2>/dev/null" > download-enum.sh
+chmod +x download-enum.sh
+
+
+
 
 ################################################################
 # Install Software
