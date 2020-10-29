@@ -75,12 +75,17 @@ cd ~/htb
 mkdir enum 2>/dev/null
 cd enum
 
-#add download seclist script
-echo "git clone https://github.com/rebootuser/LinEnum.git 2>/dev/null" > download-enum.sh
-chmod +x download-enum.sh
+#get LinEnum script
+wget https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh -O LinEnum.sh
+chmod +x LinEnum.sh
 
+#get Linux suggester:
+wget https://raw.githubusercontent.com/mzet-/linux-exploit-suggester/master/linux-exploit-suggester.sh -O les.sh
+chmod +x les.sh
 
-
+#add start python web server script:
+echo "sudo python3 -m http.server 8888" > start-pythonwebserver.sh
+chmod +x start-pythonwebserver.sh
 
 ################################################################
 # Install Software
