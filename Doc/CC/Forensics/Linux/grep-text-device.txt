@@ -1,0 +1,7 @@
+
+grep key from /dev/sdb device:
+grep -a '[a-z0-9]\{32\}' /dev/sdb
+
+
+grep text inclusief 2 lines before and 3 lines after:
+grep -a -A3 -B2 '[a-z0-9]\{32\}' /dev/sdb
