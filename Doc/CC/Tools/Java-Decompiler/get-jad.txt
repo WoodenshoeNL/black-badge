@@ -1,0 +1,18 @@
+
+
+get Jad command line tool:
+http://www.javadecompilers.com/jad
+
+wget http://www.javadecompilers.com/jad/Jad%201.5.8e%20for%20Linux%20on%20Intel%20platform.zip -O ./jad.zip
+unzip ./jad.zip
+
+
+Run jad:
+jad example.class
+
+
+
+
+
+Get JD-GUI tool:
+http://java-decompiler.github.io/
