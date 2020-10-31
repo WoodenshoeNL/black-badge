@@ -1,3 +1,12 @@
 
 Find path with wordlist:
 gobuster dir -u http://10.10.10.29/ -w /usr/share/dirb/wordlists/common.txt
+
+
+Ignore SSL verification:
+gobuster dir -w /usr/share/dirb/wordlists/big.txt -k -u https://10.10.10.60/
+gobuster dir -w /usr/share/dirbuster/wordlists/directory-list-lowercase-2.3-medium.txt -k -u https://10.10.10.60/
+
+Check extensions:
+gobuster dir -w /usr/share/dirb/wordlists/big.txt -k -x txt,bak,php -u https://10.10.10.60/
+gobuster dir -w /usr/share/dirbuster/wordlists/directory-list-lowercase-2.3-medium.txt -k  -x txt,bak,php -u https://10.10.10.60/

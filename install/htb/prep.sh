@@ -68,6 +68,11 @@ echo "git clone https://github.com/danielmiessler/SecLists.git 2>/dev/null" > do
 chmod +x download-seclist.sh
 
 
+#add unpack rockyou script
+echo "tar -zxvf ~/htb/wordlist/SecLists/Passwords/Leaked-Databases/rockyou.txt.tar.gz 2>/dev/null" > unpack-rockyou.sh
+chmod +x unpack-rockyou.sh
+
+
 ################################################################
 # add Enum
 ################################################################

