@@ -17,7 +17,13 @@ mkdir reverse-shell 2>/dev/null
 cd reverse-shell
 cp ~/my_data/g/black-badge/Doc/CC/Reverse-Shell-scripts/php-reverse-shell.php ./prss.php
 cp ~/my_data/g/black-badge/Doc/CC/Reverse-Shell-scripts/aspx-shell.aspx ./shell.aspx
+wget https://raw.githubusercontent.com/samratashok/nishang/master/Shells/Invoke-PowerShellTcp.ps1 -O Invoke-PowerShellTcp.ps1
+wget https://raw.githubusercontent.com/samratashok/nishang/master/Shells/Invoke-PowerShellTcpOneLine.ps1 -O powershelltcp.ps1
 
+
+#add start python web server script:
+echo "sudo python3 -m http.server 666" > start-pythonwebserver.sh
+chmod +x start-pythonwebserver.sh
 
 #generate keypair for target logon
 cd ~/htb
@@ -42,6 +48,9 @@ chmod +x ./add-pubkey.sh
 cp ~/my_data/g/black-badge/K/Battle/Red/create-venom.sh ./create-venom.sh
 chmod +x ./create-venom.sh
 
+#add download nishang script
+echo "git clone https://github.com/samratashok/nishang.git 2>/dev/null" > download-nishang.sh
+chmod +x download-nishang.sh
 
 
 
@@ -54,7 +63,7 @@ sed -i "s/10.10.10.10/$1/g" ~/htb/script/*
 
 #change ip addresses in reverse shell
 sed -i "s/10.10.10.10/$1/g" ~/htb/reverse-shell/*
-
+sed -i "s/192.168.254.1/$1/g" ~/htb/reverse-shell/*
 
 
 ################################################################
