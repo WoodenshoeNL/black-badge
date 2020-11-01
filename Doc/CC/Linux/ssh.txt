@@ -17,3 +17,8 @@ ssh -i <private key> <username>@<ip address>
 Import private key:
 vim <key name>
 chmod 400 <key name>
+
+
+proxy through remote host:
+ssh -i key -L8000:10.10.10.1:80 10.10.10.2
+ssh -i key -L8000:proxy:80 target

@@ -1,6 +1,7 @@
 
 Find path with wordlist:
 gobuster dir -u http://10.10.10.29/ -w /usr/share/dirb/wordlists/common.txt
+gobuster dir -w /usr/share/dirbuster/wordlists/directory-list-lowercase-2.3-medium.txt -u http://10.10.10.93/
 
 
 Ignore SSL verification:

