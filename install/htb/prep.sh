@@ -16,6 +16,7 @@ cd ~/htb
 mkdir reverse-shell 2>/dev/null
 cd reverse-shell
 cp ~/my_data/g/black-badge/Doc/CC/Reverse-Shell-scripts/php-reverse-shell.php ./prss.php
+cp ~/my_data/g/black-badge/Doc/CC/Reverse-Shell-scripts/aspx-shell.aspx ./shell.aspx
 
 
 #generate keypair for target logon
