@@ -6,6 +6,14 @@
 cd ~/my_data/g/black-badge
 git pull >/dev/null
 
+
+#copy tmux config
+cp ~/my_data/g/black-badge/install/.tmux.conf ~/.tmux.conf
+
+#create start tmux script:
+echo "cd ~/htb\n;tmux new -s attack" > ~/start-tmux.sh
+chmod +x start-tmux.sh
+
 #setup dir
 cd ~
 mkdir htb 2>/dev/null
