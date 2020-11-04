@@ -1,0 +1,17 @@
+
+https://github.com/byt3bl33d3r/SILENTTRINITY
+
+
+Download SILENTTRINITY:
+git clone https://github.com/byt3bl33d3r/SILENTTRINITY.git
+
+use python 3
+Configuration SILENTTRINITY server:
+cd Server
+apt install python3.7-dev
+apt install python3-pip
+python3.7 -m pip install -r requirements.txt
+
+
+Run SILENTTRINITY with python:
+python3.7 st.py
