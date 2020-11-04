@@ -11,7 +11,7 @@ git pull >/dev/null
 cp ~/my_data/g/black-badge/install/.tmux.conf ~/.tmux.conf
 
 #create start tmux script:
-echo "cd ~/htb\n;tmux new -s attack" > ~/start-tmux.sh
+echo "cd ~/htb\n;tmux new -s attack -c ~/htb" > ~/start-tmux.sh
 chmod +x ~/start-tmux.sh
 
 #setup dir
