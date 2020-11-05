@@ -1,0 +1,3 @@
+
+download ftp files anonymous:
+wget -m --no-passive ftp://anonymous:anonymous@10.10.10.98

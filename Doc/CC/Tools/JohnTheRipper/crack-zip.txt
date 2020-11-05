@@ -1,0 +1,13 @@
+
+Get Hash from Zip file:
+zip2john archive.zip > hash
+
+
+Crack zip file:
+john hash --wordlist=wordlist.txt
+
+
+Show password
+john hash --show
+
+access4u@security

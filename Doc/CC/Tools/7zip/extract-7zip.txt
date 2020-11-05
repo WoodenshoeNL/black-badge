@@ -1,0 +1,7 @@
+
+extract file with 7zip:
+7z x <file name>
+
+
+Get information about archive:
+7z l -slt <file name>

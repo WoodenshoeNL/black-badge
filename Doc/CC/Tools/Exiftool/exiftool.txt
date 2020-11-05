@@ -1,0 +1,5 @@
+
+view metadata image:
+exiftool picture.jpg
+
+
