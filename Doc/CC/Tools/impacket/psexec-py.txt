@@ -6,7 +6,7 @@ git clone https://github.com/SecureAuthCorp/impacket.git
 
 login with psexec.py:
 psexec.py administrator@10.10.10.27
-
+psexec.py active.htb/administrator@10.10.10.100
 
 
 Login with ntml hash:
