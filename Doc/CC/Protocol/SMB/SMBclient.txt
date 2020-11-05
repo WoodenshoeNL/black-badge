@@ -5,10 +5,19 @@ SMBclient:
 
 List shares:
 smbclient -N -L \\\\10.10.10.27\\
+smbclient -L //10.10.10.100
 
 
 Open connection to Share:
 smbclient -N \\\\10.10.10.27\\backups
 
 
+
+
+
+Locate Groups.xml file with smbclient:
+smbclient //10.10.10.100/replication
+RECURSE ON
+PROMPT OFF
+mget *
 

