@@ -33,9 +33,7 @@ ssh-keygen -t rsa -b 4096 -C "htb@woodenshoe" -f ./htb_rsa -q -N "" <<<y 2>&1 >/
 ################################################################
 #Recon script
 cd ~/htb
-mkdir recon 2>/dev/null
-cd recon
-cp ~/my_data/g/black-badge/K/Battle/Red/Recon . -r
+cp ~/my_data/g/black-badge/K/Battle/Red/recon . -r
 
 ################################################################
 #reverse shells
