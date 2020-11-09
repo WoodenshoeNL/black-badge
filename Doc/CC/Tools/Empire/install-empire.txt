@@ -1,11 +1,13 @@
 
 Download Empire:
 git clone https://github.com/EmpireProject/Empire.git
+git clone https://github.com/BC-SECURITY/Empire.git
 
 
 Install empire:
 sudo ./setup/install.sh
-
+sudo poetry install
+sudo poetry run python empire --rest -n
 
 
 
