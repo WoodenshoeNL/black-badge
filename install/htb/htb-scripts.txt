@@ -1,6 +1,6 @@
 
 Prep script:
-~/my_data/g/black-badge/install/htb/prep.sh "10.10.14.13"
+~/my_data/g/black-badge/install/htb/prep.sh "10.10.14.12"
 
 
 Pull newest repo black-badge:
