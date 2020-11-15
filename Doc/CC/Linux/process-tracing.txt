@@ -1,0 +1,9 @@
+
+Tracing processes with strace and ltrace
+
+ltrace shows parameters of invoked functions and system calls.
+The strace command can be used to intercept and record the system calls made, and the signals received by a process.
+
+
+get sys calls with ltrace:
+ltrace ./executable
