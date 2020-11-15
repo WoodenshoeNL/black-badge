@@ -1,0 +1,10 @@
+Get Ghidra:
+https://ghidra-sre.org/
+
+Ghidra Reverse Engineerings tool
+
+Install Ghidra:
+unzip ~/ghidra.zip
+
+Run Ghidra:
+./ghidraRun
