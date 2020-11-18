@@ -47,9 +47,13 @@ Use POST HTTP method:
 ffuf -u http://10.10.10.48/FUZZ -w /usr/share/dirb/wordlists/big.txt -X POST
 
 
+Use POST HTTP method with post data, fuzzing character in post data:
+ffuf -u http://10.10.10.153/moodle/login/index.php -w /home/htb-woodenshoe/htb/wordlist/SecLists/Fuzzing/special-chars.txt -X POST -H "Content-Type: application/x-www-form-urlencoded" -d 'anchor=&username=Giovanni&password=Th4C00lTheachaFUZZ' -mc all -v -fs 440
+
+
 Replay proxy:
 Run ffuf through a local proxy(burp):
-ffuf -u http://10.10.10.48/FUZZ -w /usr/share/dirb/wordlists/big.txt --relplay-proxy http://127.0.0.1:8080
+ffuf -u http://10.10.10.48/FUZZ -w /usr/share/dirb/wordlists/big.txt --replay-proxy http://127.0.0.1:8080
 
 
 
