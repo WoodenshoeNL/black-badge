@@ -1,0 +1,15 @@
+
+Show databases:
+show databases;
+
+use database:
+use <database name>;
+
+show tables:
+show tables;
+
+describe table:
+describe <table name>;
+
+Get data from table:
+select id,username,password from mdl_user;

@@ -1,0 +1,3 @@
+
+connect with mysql on command line:
+mysql -u root -D moodle -p
