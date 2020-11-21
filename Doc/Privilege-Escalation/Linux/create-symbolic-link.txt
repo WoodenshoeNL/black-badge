@@ -1,0 +1,8 @@
+
+remove /home/giovanni/work/tmp:
+rm -rf /home/giovanni/work/tmp
+
+
+create a symbolic link to shadow file:
+ln -s /etc/shadow /home/giovanni/work/tmp
+

