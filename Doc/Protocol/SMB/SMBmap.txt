@@ -7,6 +7,9 @@ Enumerate content of replication directory:
 smbmap -H 10.10.10.10.100 -R Replication
 
 
+Recursively search files, to depth 5:
+smbmap -H 10.10.10.123 -R --depth 5
+
 
 Get Groups.xml file:
 smbmap -H 10.10.10.100 -R Replication -A Groups.xml -q

