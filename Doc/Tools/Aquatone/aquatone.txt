@@ -1,0 +1,18 @@
+
+Get Aquatone:
+https://github.com/michenriksen/aquatone
+https://github.com/michenriksen/aquatone/releases/tag/v1.7.0
+wget https://github.com/michenriksen/aquatone/releases/download/v1.7.0/aquatone_linux_amd64_1.7.0.zip
+unzip aquatone_linux_amd64_1.7.0.zip
+
+Install chromium:
+git clone https://github.com/scheib/chromium-latest-linux.git
+cd chromium-latest-linux/
+./update.sh
+
+get chromium path:
+cd <chromium number>
+pwd
+
+run aquatone with hosts input file and chromium path:
+cat hosts | ./aquatone -chrome-path /home/htb-woodenshoe/htb/recon/aquatone/chromium-latest-linux/831141
