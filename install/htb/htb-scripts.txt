@@ -6,3 +6,7 @@ Prep script:
 Pull newest repo black-badge:
 cd ~/my_data/black-badge
 git pull
+
+
+Clone black-badge:
+git clone https://github.com/woodenshoenl/black-badge.git
