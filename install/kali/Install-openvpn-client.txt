@@ -1,0 +1,8 @@
+
+install openvpn client:
+sudo apt-get install -y openvpn network-manager-openvpn network-manager-openvpn-gnome
+
+
+
+copy openvpn files from host wsl:
+cp /mnt/c/users/'michel klomp'/Downloads/*.ovpn ./

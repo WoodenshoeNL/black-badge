@@ -1,0 +1,13 @@
+
+
+
+copy openvpn files from host wsl:
+cp /mnt/c/users/'michel klomp'/Downloads/*.ovpn ./
+
+
+start openvpn connection:
+sudo openvpn open-vpn-file.ovpn
+
+
+Clean up openvpn files:
+rm ./*.ovpn

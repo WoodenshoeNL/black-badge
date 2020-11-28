@@ -1,0 +1,38 @@
+
+https://www.kali.org/docs/wsl/win-kex/
+
+install WSL:
+
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+
+restart
+
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+
+restart
+
+Install WSL 2 Kernel:
+https://aka.ms/wsl2kernel
+
+Install WSL 2 Kernel, with downloaded packet.
+
+set version to 2:
+wsl --set-default-version 2
+
+Install Kali Linux from Microsoft Store.
+
+Start Kali and finish installation setup.xml
+
+
+Instal Win-Kex:
+sudo apt update && sudo apt install -y kali-win-kex
+
+
+
+Install default Kali software:
+sudo apt install -y kali-linux-default
+
+
+
+
