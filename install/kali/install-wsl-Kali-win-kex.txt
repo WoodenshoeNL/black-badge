@@ -34,5 +34,37 @@ Install default Kali software:
 sudo apt install -y kali-linux-default
 
 
+Install headless Kali software (no Gui):
+sudo apt install -y kali-linux-headless
 
 
+
+
+
+https://www.kali.org/docs/general-use/metapackages/
+Kali Meta Packages:
+Tools
+kali-tools-gpu: Tools which benefit from having access to GPU hardware
+kali-tools-hardware: Hardware hacking tools
+kali-tools-crypto-stego: Tools based around Cryptography & Steganography
+kali-tools-fuzzing: For fuzzing protocols
+kali-tools-802-11: 802.11 (Commonly known as "Wi-Fi")
+kali-tools-bluetooth: For targeting Bluetooth devices
+kali-tools-rfid: Radio-Frequency IDentification tools
+kali-tools-sdr: Software-Defined Radio tools
+kali-tools-voip: Voice over IP tools
+kali-tools-windows-resources: Any resources which can be executed on a Windows hosts
+Menu
+kali-tools-information-gathering: Used for Open Source Intelligence (OSINT) & information gathering
+kali-tools-vulnerability: Vulnerability assessments tools
+kali-tools-web: Designed doing web applications attacks
+kali-tools-database: Based around any database attacks
+kali-tools-passwords: Helpful for password cracking attacks – Online & offline
+kali-tools-wireless: All tools based around Wireless protocols – 802.11, Bluetooth, RFID & SDR
+kali-tools-reverse-engineering: For reverse engineering binaries
+kali-tools-exploitation: Commonly used for doing exploitation
+kali-tools-social-engineering: Aimed for doing social engineering techniques
+kali-tools-sniffing-spoofing: Any tools meant for sniffing & spoofing
+kali-tools-post-exploitation: Techniques for post exploitation stage
+kali-tools-forensics: Forensic tools – Live & Offline
+kali-tools-reporting: Reporting tools
