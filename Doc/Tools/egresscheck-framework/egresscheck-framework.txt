@@ -1,0 +1,21 @@
+
+install egresscheck framework:
+git clone https://github.com/stufus/egresscheck-framework.git
+
+Start the framework:
+cd egresscheck-framework/
+./ecf.py
+
+
+
+Generate PowerShell code:
+set PORTS 8500-9500
+set TARGETIP 172.16.91.10
+set SOURCEIP 172.16.91.100
+set PROTOCOL tcp
+generate powershell-cmd
+
+Run Powershell command on target machine:
+
+
+
