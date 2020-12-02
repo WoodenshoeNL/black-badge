@@ -14,6 +14,10 @@ cp ~/my_data/black-badge/install/.tmux.conf ~/.tmux.conf
 echo "cd ~/htb\n;tmux new -s attack -c ~/htb" > ~/start-tmux.sh
 chmod +x ~/start-tmux.sh
 
+#create attach tmux script:
+echo "cd ~/htb\n;tmux a -t attack" > ~/attach-tmux.sh
+chmod +x ~/attach-tmux.sh
+
 #setup dir
 cd ~
 mkdir htb 2>/dev/null
@@ -33,7 +37,7 @@ ssh-keygen -t rsa -b 4096 -C "htb@woodenshoe" -f ./htb_rsa -q -N "" <<<y 2>&1 >/
 ################################################################
 #Recon script
 cd ~/htb
-cp ~/my_data/black-badge/K/Battle/Red/recon . -r
+cp ~/my_data/black-badge/K/Battle/Red/Recon . -r
 
 ################################################################
 #reverse shells
