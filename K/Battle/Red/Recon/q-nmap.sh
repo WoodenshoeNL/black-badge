@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo nmap -sV -sS -A -oA nmap-quick-$1.txt $1
+sudo nmap -Pn -sV -sS -A -oA nmap-quick-$1.txt $1
