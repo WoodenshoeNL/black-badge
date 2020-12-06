@@ -25,3 +25,9 @@ ctrl + Z
 stty raw -echo
 fg <enter>
 <enter>
+
+
+
+
+with script command:
+/usr/bin/script -qc /bin/bash /dev/null
