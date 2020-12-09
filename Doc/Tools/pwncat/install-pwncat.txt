@@ -8,6 +8,9 @@ pip install git+https://github.com/calebstewart/pwncat.git
 pip install -U git+https://github.com/calebstewart/paramiko
 
 
+sudo pip install git+https://github.com/JohnHammond/base64io-python
+
+
 
 
 ############################################################################
