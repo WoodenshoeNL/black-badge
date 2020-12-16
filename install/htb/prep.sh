@@ -114,6 +114,10 @@ cd enum
 wget https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh -O LinEnum.sh
 chmod +x LinEnum.sh
 
+#get linpeas script
+wget https://raw.githubusercontent.com/carlospolop/privilege-escalation-awesome-scripts-suite/master/linPEAS/linpeas.sh -O linpeas.sh
+chmod +x linpeas.sh
+
 #get Linux suggester:
 wget https://raw.githubusercontent.com/mzet-/linux-exploit-suggester/master/linux-exploit-suggester.sh -O les.sh
 chmod +x les.sh
