@@ -1,5 +1,0 @@
-
-
-Replace ip in files in folder with sed
-sed -i "s/10.10.10.10/$1/g" folder/*
-

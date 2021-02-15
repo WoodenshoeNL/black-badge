@@ -1,3 +1,0 @@
-
-Use Proxy
-curl -x <proxy addres:port> <target address:port>
