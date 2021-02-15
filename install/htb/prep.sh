@@ -130,7 +130,10 @@ chmod +x start-pythonwebserver.sh
 # Install Software
 ################################################################
 
-
+#install Terminator:
+#sudo add-apt-repository ppa:gnome-terminator
+#sudo apt-get update
+sudo apt-get install terminator
 
 #install golang
 #sudo apt install golang
