@@ -6,7 +6,7 @@ context(os='linux', arch='amd64')
 
 ret_offset = 0
 
-log.info('Connect Remote')
+log.info('Create IO')
 #io = remote('', )
 io = process('/home/kali/Downloads/optimistic')
 
