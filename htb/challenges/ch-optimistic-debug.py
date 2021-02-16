@@ -13,7 +13,7 @@ log.info('Create IO')
 io = process('/home/kali/Downloads/optimistic_patched')
 pid = gdb.attach(io, '''
 set follow-fork-mode child
-break main
+break *(main+377)
 continue
 ''')
 
