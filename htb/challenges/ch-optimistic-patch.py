@@ -13,6 +13,7 @@ optimistic = ELF('/home/kali/Downloads/optimistic')
     # other data here.
     #optimistic.write(cur_address, "P0wn3dB0t")
 
-optimistic.asm(elf.symbols['alarm'], 'ret')
+optimistic.asm(optimistic.symbols['alarm'], 'ret')
+#optimistic.asm(optimistic.symbols['set_key'], 'mov eax,%s\nret\n' % (hex(82783732673839 & 0xFFFFFFFF)))
 
 optimistic.save('/home/kali/Downloads/optimistic_patched')
