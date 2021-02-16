@@ -3,7 +3,7 @@ from pwn import *
 
 #context.log_level = 'DEBUG'
 context(os='linux', arch='amd64')
-context.terminal = ["tmux", "splitw", "-h"]
+context.terminal = ["tmux", "splitw", "-v"]
 
 padding_length = 104
 ret_offset = -96
