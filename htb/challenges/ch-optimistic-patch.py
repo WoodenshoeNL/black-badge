@@ -1,4 +1,5 @@
 from pwn import *
+import os
 
 #context.log_level = 'DEBUG'
 #context(os='linux', arch='amd64')
@@ -17,3 +18,5 @@ optimistic.asm(optimistic.symbols['alarm'], 'ret')
 #optimistic.asm(optimistic.symbols['set_key'], 'mov eax,%s\nret\n' % (hex(82783732673839 & 0xFFFFFFFF)))
 
 optimistic.save('/home/kali/Downloads/optimistic_patched')
+
+os.system('chmod +x /home/kali/Downloads/optimistic_patched')
