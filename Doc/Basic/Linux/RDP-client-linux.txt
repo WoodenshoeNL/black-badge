@@ -1,4 +1,0 @@
-
-
-connect with rdesktop:
-rdesktop 172.16.91.100

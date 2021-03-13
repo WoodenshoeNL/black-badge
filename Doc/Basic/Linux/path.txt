@@ -1,3 +1,0 @@
-
-add directory to path
-PATH=$PATH:~/opt/bin
