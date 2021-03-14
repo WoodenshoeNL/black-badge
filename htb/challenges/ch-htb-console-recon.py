@@ -19,7 +19,7 @@ info("%#x system", elf.symbols.system)
 #info("%s got", elf.got)
 #info("%s libs", elf.libs)
 
-execute_string = p64(next(elf.search("date")))
+execute_string = next(elf.search(b'date'))
 info("%#x execute string", execute_string)
 
 rop = ROP(elf)
