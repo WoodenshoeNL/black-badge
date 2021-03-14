@@ -14,6 +14,7 @@ info("%#x run", elf.symbols.run)
 
 info("%#x winner", elf.symbols.winner)
 
+info("%s symbols", elf.symbols)
 info("%s plt", elf.plt)
-
 info("%s got", elf.got)
+info("%s libs", elf.libs)
