@@ -6,7 +6,7 @@ context(os='linux', arch='amd64')
 
 executable = '/home/kali/Downloads/htb-console'
 
-#padding_length_flag = 24
+#padding_length = 24
 
 elf = context.binary = ELF(executable)
 

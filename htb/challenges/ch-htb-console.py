@@ -6,7 +6,7 @@ context(os='linux', arch='amd64')
 
 executable = '/home/kali/Downloads/htb-console'
 
-padding_length_flag = 24
+padding_length = 24
 system_call = p64(0x401381)
 #execute_string = p64(0x402107)
 
