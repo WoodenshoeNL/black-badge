@@ -33,7 +33,8 @@ io.sendlineafter('>> ', 'hof')
 payload = cyclic(200)
 
 log.info('Send Payload')
-io.sendlineafter('flag: ', payload)
+#io.sendlineafter('flag: ', payload)     #flag
+io.sendlineafter('name: ', payload)     #hof
 
 io.wait()
 
