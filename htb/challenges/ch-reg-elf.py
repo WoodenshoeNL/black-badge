@@ -10,4 +10,6 @@ elf = context.binary = ELF('/home/kali/Downloads/reg')
 
 #info("plt = %#x", hex(elf.plt[b'run']))
 
-info("%#x target", elf.symbols.run)
+info("%#x run", elf.symbols.run)
+
+info("%#x winner", elf.symbols.winner)
