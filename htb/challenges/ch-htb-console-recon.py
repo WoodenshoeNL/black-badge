@@ -27,7 +27,8 @@ log.info('Create IO')
 io = process(executable)
 
 log.info('Send Command flag')
-io.sendlineafter('>>', 'flag')
+#io.sendlineafter('>>', 'flag')
+io.sendline('flag')
 
 #log.info('Send Command hof')
 #io.sendlineafter('>> ', 'hof')
