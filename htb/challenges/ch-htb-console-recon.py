@@ -17,9 +17,9 @@ log.info('Get Addresses')
 #info("%#x winner", elf.symbols.winner)
 
 info("%s symbols", elf.symbols)
-info("%s plt", elf.plt)
-info("%s got", elf.got)
-info("%s libs", elf.libs)
+#info("%s plt", elf.plt)
+#info("%s got", elf.got)
+#info("%s libs", elf.libs)
 
 
 log.info('Create IO')
@@ -27,7 +27,7 @@ log.info('Create IO')
 io = process(executable)
 
 log.info('Send Command flag')
-io.sendlineafter('>> ', 'flag')
+io.sendlineafter('>>', 'flag')
 
 #log.info('Send Command hof')
 #io.sendlineafter('>> ', 'hof')
