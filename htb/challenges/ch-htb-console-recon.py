@@ -4,7 +4,7 @@ from pwn import *
 #context.log_level = 'DEBUG'
 context(os='linux', arch='amd64')
 
-executable = '/home/kali/Downloads/reg'
+executable = '/home/kali/Downloads/htb-console'
 
 #padding_length = 56
 #ret_offset = -96
@@ -27,8 +27,8 @@ log.info('Create IO')
 io = process(executable)
 
 log.info('Send Command flag')
-#io.sendlineafter('>>', 'flag')
-io.sendline('flag')
+io.sendlineafter('>>', 'flag')
+#io.sendline('flag')
 
 #log.info('Send Command hof')
 #io.sendlineafter('>> ', 'hof')
