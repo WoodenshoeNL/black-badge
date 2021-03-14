@@ -6,7 +6,7 @@ context(os='linux', arch='amd64')
 
 padding_length = 56
 #ret_offset = -96
-winner_address = p64(0x401206, endian='big')
+winner_address = '0x401206'
 
 log.info('Create IO')
 #io = remote('', )
