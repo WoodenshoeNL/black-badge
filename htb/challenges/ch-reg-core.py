@@ -4,7 +4,7 @@ from pwn import *
 #context.log_level = 'DEBUG'
 context(os='linux', arch='amd64')
 
-#padding_length = 104
+#padding_length = 56
 #ret_offset = -96
 
 log.info('Create IO')
@@ -26,6 +26,8 @@ pattern = core.read(stack, 4)
 info("cyclic pattern = %s", pattern.decode())
 rip_offset = cyclic_find(pattern)
 info("rip offset is = %d", rip_offset)
+
+info("mappings are = %s", core.mappings)
 
 io.interactive()
 
