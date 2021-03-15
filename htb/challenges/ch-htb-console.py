@@ -24,7 +24,7 @@ log.info('Get Addresses')
 #info("%#x execute string", execute_string)
 #execute_string = p64(next(elf.search(b'date')))
 
-execute_string = p64('0x004040b0')
+execute_string = p64(0x004040b0)
 
 #call_system = next(elf.search(asm('call system'), executable = True)))[0]
 #info("%#x execute string", execute_string)
