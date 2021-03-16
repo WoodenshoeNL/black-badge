@@ -28,6 +28,8 @@ payload = [
     rop.chain()
 ]
 
+print(payload)
+
 payload = b"".join(payload)
 
 ###################################################
