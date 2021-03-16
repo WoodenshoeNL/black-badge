@@ -6,7 +6,7 @@ context(os='linux', arch='amd64')
 
 executable = '/home/kali/Downloads/htb-console'
 padding_length = 24
-command = '/bin/sh'
+command = 'date'
 
 #################################################
 # Create ROP Chain
