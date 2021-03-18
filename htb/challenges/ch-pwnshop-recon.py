@@ -27,9 +27,9 @@ io.sendlineafter('>', '2')
 payload = cyclic(200)
 
 log.info('Send Payload')
-io.sendlineafter('sell? ', payload)
-io.sendlineafter('it? ', payload)
-io.sendlineafter('what? ', payload)
+io.sendlineafter('? ', payload)
+io.sendlineafter('? ', payload)
+io.sendlineafter('? ', payload)
 
 io.wait()
 
