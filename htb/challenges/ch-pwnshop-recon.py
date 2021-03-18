@@ -27,9 +27,9 @@ io.sendlineafter('>', '2')
 payload = cyclic(32)
 
 log.info('Send Payload')
-io.sendlineafter('? ', payload)
-io.sendlineafter('? ', payload)
-io.sendlineafter('? ', payload)
+io.sendlineafter(' ', payload)
+io.sendlineafter(' ', payload)
+io.sendlineafter(' ', payload)
 
 io.wait()
 
