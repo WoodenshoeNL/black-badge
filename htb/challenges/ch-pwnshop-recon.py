@@ -22,14 +22,12 @@ log.info('Create IO')
 io = process(executable)
 
 log.info('Send Command')
-io.sendlineafter('>', '2')
+io.sendlineafter('>', '1')
 
-payload = cyclic(32)
+payload = cyclic(200)
 
 log.info('Send Payload')
-io.sendlineafter(' ', payload)
-io.sendlineafter(' ', payload)
-io.sendlineafter(' ', payload)
+io.sendlineafter('details: ', payload)
 
 io.wait()
 
