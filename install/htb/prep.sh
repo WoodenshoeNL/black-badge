@@ -122,6 +122,10 @@ chmod +x linpeas.sh
 wget https://raw.githubusercontent.com/mzet-/linux-exploit-suggester/master/linux-exploit-suggester.sh -O les.sh
 chmod +x les.sh
 
+#get Linux Smart Enumeration:
+wget https://raw.githubusercontent.com/diego-treitos/linux-smart-enumeration/master/lse.sh -O lse.sh
+chmod +x lse.sh
+
 #add start python web server script:
 echo "sudo python3 -m http.server 8888" > start-pythonwebserver.sh
 chmod +x start-pythonwebserver.sh
