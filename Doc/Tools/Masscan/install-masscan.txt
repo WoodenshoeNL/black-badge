@@ -1,8 +1,0 @@
-
-install the newest version of masscan:
-
-wget https://github.com/robertdavidgraham/masscan/archive/master.zip
-unzip master.zip && cd masscan-master
-make && sudo make install
-sudo cp ./bin/masscan /usr/bin
-masscan --version

@@ -1,9 +1,0 @@
-
-
-Bruteforce TGS hash from kerberos
-hashcat -m 13100 hashes.txt /opt/useful/SecLists/Passwords/Leaked-Databases/rockyou.txt --force
-
-Show Passwords:
-hashcat -m 13100 hashes.txt /opt/useful/SecLists/Passwords/Leaked-Databases/rockyou.txt --force --show
-
-

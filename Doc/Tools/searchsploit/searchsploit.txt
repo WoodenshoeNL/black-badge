@@ -1,8 +1,0 @@
-
-
-find exploits:
-searchsploit helpdeskz
-
-
-download expoint script to local:
-searchsploit -m php/webapps/40300.py

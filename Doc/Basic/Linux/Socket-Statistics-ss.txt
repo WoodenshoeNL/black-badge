@@ -1,4 +1,0 @@
-
-
-get information about network usage of process
-ss -anp | grep <pid> 

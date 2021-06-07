@@ -1,7 +1,0 @@
-
-Impackets tools:
-https://github.com/SecureAuthCorp/impacket
-git clone https://github.com/SecureAuthCorp/impacket.git
-
-cd impacket
-pip install .

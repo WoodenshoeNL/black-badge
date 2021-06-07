@@ -1,5 +1,0 @@
-download executable from github:
-https://github.com/DominicBreuker/pspy
-
-
-Make executable and run to get process infromation

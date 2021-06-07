@@ -1,3 +1,0 @@
-
-Retrieve hash from zip file: 
-zip2john backup.zip > hash

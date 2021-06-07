@@ -1,4 +1,0 @@
-
-get icmp traffic to host:
-tcpdump -i tun0 icmp
-

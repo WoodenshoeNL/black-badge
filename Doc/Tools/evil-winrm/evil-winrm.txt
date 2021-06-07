@@ -1,7 +1,0 @@
-
-get evil-winrm:
-sudo gem install evil-winrm
-
-
-Connect with server:
-evil-winrm -i 10.10.10.30 -u svc_bes -p Sheffield19

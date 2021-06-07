@@ -1,9 +1,0 @@
-
-Get the current working directory from process by ID.
-
-cd /proc/<pid>
-ls -la | grep cwd
-
-
-Of:
-ls -la /proc/<pid> | grep cwd

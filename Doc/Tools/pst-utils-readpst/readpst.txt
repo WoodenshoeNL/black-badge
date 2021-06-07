@@ -1,7 +1,0 @@
-
-install pst-utils:
-sudo apt install pst-utils
-
-
-Extract pst file:
-readpst -tea -m Access-Control.pst

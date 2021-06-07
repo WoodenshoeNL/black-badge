@@ -1,4 +1,0 @@
-
-
-Enumerate Users:
-GetADUsers.py -all -dc-ip 10.10.10.100 active.htb/svc_tgs

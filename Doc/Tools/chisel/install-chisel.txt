@@ -1,9 +1,0 @@
-
-download chisel repo:
-git clone https://github.com/jpillora/chisel
-
-
-Get latest release:
-https://github.com/jpillora/chisel/releases/latest
-
-

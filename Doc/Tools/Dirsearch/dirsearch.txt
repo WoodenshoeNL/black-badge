@@ -1,6 +1,0 @@
-
-git clone https://github.com/maurosoria/dirsearch.git
-cd dirsearch
-
-
-python3 dirsearch.py -u http://10.10.10.28 -e php
