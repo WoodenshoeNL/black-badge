@@ -1,5 +1,3 @@
 #!/bin/bash
 
-print-alias(){
-    echo "Print Alias"
-}
+alias qn="~/black-badge/install/oscp/recon/nmap.sh"
