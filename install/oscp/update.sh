@@ -54,6 +54,4 @@ chmod +x start-pythonwebserver.sh
 ################################################################
 cd ~
 rm -rf -d recon
-mkdir recon 2>/dev/null
-cd recon
-cp ~/black-badge/K/Battle/Red/Recon/. . -a
+cp ~/black-badge/K/Battle/Red/recon . -r
