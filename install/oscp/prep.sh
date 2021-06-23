@@ -26,25 +26,26 @@ git clone https://github.com/woodenshoenl/lab
 cp ~/black-badge/install/.tmux.conf ~/.tmux.conf
 
 ################################################################
-# Create scripts
+# Create tmux and vpn scripts
 ################################################################
 #setup script dir
 cd ~
-mkdir script 2>/dev/null
-cd script
 
 #create start tmux script:
-echo "cd ~/htb\n;tmux new -s attack -c ~/htb" > ~/start-tmux.sh
+echo "tmux new -s attack" > ~/start-tmux.sh
 chmod +x ~/start-tmux.sh
 
 #create attach tmux script:
-echo "cd ~/htb\n;tmux a -t attack" > ~/attach-tmux.sh
+echo "tmux a -t attack" > ~/attach-tmux.sh
 chmod +x ~/attach-tmux.sh
 
-#add start python web server script:
-echo "sudo python3 -m http.server 6443" > start-pythonwebserver.sh
-chmod +x start-pythonwebserver.sh
+#create start htb vpn script:
+echo "sudo openvpn ~/lab/htb/lab_woodenshoe.ovpn" > ~/start-htb-vpn.sh
+chmod +x ~/start-htb-vpn.sh
 
+#create start htb vpn script:
+echo "sudo openvpn ~/lab/oscp/OS-95945-PWK.ovpn" > ~/start-oscp-vpn.sh
+chmod +x ~/start-oscp-vpn.sh
 
 ################################################################
 # add wordlists
