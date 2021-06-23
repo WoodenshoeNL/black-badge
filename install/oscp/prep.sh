@@ -48,6 +48,12 @@ echo "sudo openvpn ~/lab/oscp/OS-95945-PWK.ovpn" > ~/start-oscp-vpn.sh
 chmod +x ~/start-oscp-vpn.sh
 
 ################################################################
+# Add update ip script
+################################################################
+cp ~/black-badge/install/oscp/update-ip.sh ./update-ip.sh
+chmod +x ./update-ip.sh
+
+################################################################
 # add wordlists
 ################################################################
 #unpack rockyou file
