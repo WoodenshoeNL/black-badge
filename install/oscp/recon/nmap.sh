@@ -1,7 +1,9 @@
 #!/bin/bash
 
-echo $PWD
+echo "Running: sudo nmap -Pn -sV -p- -T4 -oN nmap-full-quick.txt $1"
+sudo nmap -Pn -sV -p- -T4 -oN nmap-full-quick.txt $1
 
-sudo nmap -Pn -sV -p- -oN nmap-full-quick-$1.txt $1
+echo "################################################################"
 
-#sudo nmap -Pn -sV -sS -A -p- --script vuln -O -oA nmap-full-$1.txt $1
+echo "sudo nmap -Pn -sV -sS -A -p- --script vuln -T4 -O -oN nmap-full-A.txt $1"
+sudo nmap -Pn -sV -sS -A -p- --script vuln -T4 -O -oN nmap-full-A.txt $1
