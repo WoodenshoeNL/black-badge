@@ -108,5 +108,6 @@ sed -i "s/192.168.254.1/$ip/g" ~/reverse-shell/*
 if ! grep -q "create-alias.sh" ~/.zshrc; then
     echo "adding aliases"
     echo "source ~/script/create-alias.sh" >> ~/.zshrc
-    source ~/.zshrc
 fi
+
+source ~/.zshrc

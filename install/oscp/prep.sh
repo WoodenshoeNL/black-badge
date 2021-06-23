@@ -47,6 +47,10 @@ chmod +x ~/start-htb-vpn.sh
 echo "sudo openvpn ~/lab/oscp/OS-95945-PWK.ovpn" > ~/start-oscp-vpn.sh
 chmod +x ~/start-oscp-vpn.sh
 
+#create start update script:
+echo "cd ~/black-badge;git pull;~/black-badge/install/oscp/update.sh" > ~/start-update.sh
+chmod +x ~/start-update.sh
+
 ################################################################
 # Add update ip script
 ################################################################
