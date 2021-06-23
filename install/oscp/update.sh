@@ -56,4 +56,4 @@ cd ~
 rm -rf -d recon
 mkdir recon 2>/dev/null
 cd recon
-cp ~/black-badge/K/Battle/Red/Recon . -r
+cp ~/black-badge/K/Battle/Red/Recon/ . -r
