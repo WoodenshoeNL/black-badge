@@ -101,6 +101,20 @@ chmod +x lse.sh
 echo "sudo python3 -m http.server 6680" > start-pythonwebserver.sh
 chmod +x start-pythonwebserver.sh
 
+################################################################
+# add Recon
+################################################################
+cd ~
+rm -rf -d recon
+cp ~/black-badge/install/oscp/recon . -r
+
+################################################################
+# add script
+################################################################
+cd ~
+rm -rf -d script
+cp ~/black-badge/install/oscp/script . -r
+
 
 ################################################################
 # Install Software / Pimp my kali / Blindpentester
@@ -299,3 +313,14 @@ fi
 wget https://github.com/RustScan/RustScan/releases/download/2.0.1/rustscan_2.0.1_amd64.deb -O /tmp/rustscan_2.0.1_amd64.deb
 dpkg -i /tmp/rustscan_2.0.1_amd64.deb
 rm -f /tmp/rustscan_2.0.1_amd64.deb
+
+
+################################################################
+# add alias to .zshrc
+################################################################
+if ! grep -q "create-alias.sh" ~/.zshrc; then
+    echo "adding aliases"
+    echo "source ~/script/create-alias.sh" >> ~/.zshrc
+fi
+
+source ~/.zshrc
