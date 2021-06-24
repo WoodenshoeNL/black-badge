@@ -322,6 +322,9 @@ rm -f /tmp/rustscan_2.0.1_amd64.deb
 #install xsel
 apt-get install xsel
 
+#install updog
+pip3 install updog
+
 ################################################################
 # add alias to .zshrc
 ################################################################
