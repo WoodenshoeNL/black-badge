@@ -111,6 +111,7 @@ if ! grep -q "create-alias.sh" ~/.zshrc; then
 fi
 
 source ~/.zshrc
+source ~/script/create-alias.sh
 
 ################################################################
 # set tmux logging dir
