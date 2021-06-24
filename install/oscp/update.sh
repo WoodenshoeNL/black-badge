@@ -128,6 +128,7 @@ fi
 #change logging settings in tmux logging plugin
 sed -i 's/$HOME/lab\/logging/g' ~/.tmux/plugins/tmux-logging/scripts/variables.sh
 sed -i 's/tmux-screen-capture-${filename_suffix}/tmux-sc-${filename_suffix}/g' ~/.tmux/plugins/tmux-logging/scripts/variables.sh
+sed -i 's/{session_name}-#{window_index}-#{pane_index}-%Y%m%dT%H%M%S.log/{session_name}-#{window_name}-#{pane_index}-%Y%m%dT%H%M%S.log/g' ~/.tmux/plugins/tmux-logging/scripts/variables.sh
 
 ################################################################
 # refresh tmux config
