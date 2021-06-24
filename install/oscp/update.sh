@@ -111,3 +111,42 @@ if ! grep -q "create-alias.sh" ~/.zshrc; then
 fi
 
 source ~/.zshrc
+
+################################################################
+# set tmux logging dir
+################################################################
+FOLDER=~/lab/logging
+if [ -d "$FOLDER" ]
+then
+        echo "loggin seems to exist already.  moving along..."
+else
+        echo "Adding Tmux logging dir..."
+        cd ~/lab
+        mkdir logging
+fi
+
+#change logging settings in tmux logging plugin
+sed -i 's/$HOME/lab\/logging/g' ~/.tmux/plugins/tmux-logging/scripts/variables.sh
+sed -i 's/tmux-screen-capture-${filename_suffix}/tmux-sc-${filename_suffix}/g' ~/.tmux/plugins/tmux-logging/scripts/variables.sh
+
+################################################################
+# refresh tmux config
+################################################################
+#copy tmux config
+rm -f ~/.tmux.conf
+cp ~/black-badge/install/.tmux.conf ~/.tmux.conf
+
+
+
+
+
+echo "################################################################"
+echo "# End"
+echo "################################################################"
+echo "# "
+echo "# Press prefix + I in Tmux to install plugins and reload Tmux config"
+echo "# "
+echo "# "
+echo "# "
+echo "# "
+echo "################################################################"

@@ -21,9 +21,14 @@ git clone https://github.com/woodenshoenl/black-badge
 git clone https://github.com/woodenshoenl/black-badge-private
 git clone https://github.com/woodenshoenl/lab
 
-
+################################################################
+# Configure tmux
+################################################################
 #copy tmux config
 cp ~/black-badge/install/.tmux.conf ~/.tmux.conf
+
+# add tmux plugin manager
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 ################################################################
 # Create tmux and vpn scripts
@@ -314,6 +319,8 @@ wget https://github.com/RustScan/RustScan/releases/download/2.0.1/rustscan_2.0.1
 dpkg -i /tmp/rustscan_2.0.1_amd64.deb
 rm -f /tmp/rustscan_2.0.1_amd64.deb
 
+#install xsel
+apt-get install xsel
 
 ################################################################
 # add alias to .zshrc
@@ -324,3 +331,14 @@ if ! grep -q "create-alias.sh" ~/.zshrc; then
 fi
 
 source ~/.zshrc
+
+echo "################################################################"
+echo "# End"
+echo "################################################################"
+echo "# "
+echo "# Press prefix + I in Tmux to install plugins"
+echo "# "
+echo "# "
+echo "# "
+echo "# "
+echo "################################################################"
