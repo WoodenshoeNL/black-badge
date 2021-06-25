@@ -110,7 +110,7 @@ if ! grep -q "create-alias.sh" ~/.zshrc; then
     echo "source ~/script/create-alias.sh" >> ~/.zshrc
 fi
 
-source ~/.zshrc
+#source ~/.zshrc
 source ~/script/create-alias.sh
 
 ################################################################
