@@ -325,6 +325,12 @@ apt-get install xsel
 #install updog
 pip3 install updog
 
+#download pimpmykali
+git clone https://github.com/Dewalt-arch/pimpmykali /tmp/pimpmykali
+
+#download blindpentester
+git clone https://github.com/blindpentester/the-essentials /tmp/the-essentials
+
 ################################################################
 # add alias to .zshrc
 ################################################################
