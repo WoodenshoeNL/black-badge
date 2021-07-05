@@ -50,6 +50,11 @@ chmod +x les.sh
 wget https://raw.githubusercontent.com/diego-treitos/linux-smart-enumeration/master/lse.sh -O lse.sh
 chmod +x lse.sh
 
+##Windows Enumeration
+wget https://raw.githubusercontent.com/rasta-mouse/Sherlock/master/Sherlock.ps1 -O Sherlock.ps1
+wget https://raw.githubusercontent.com/411Hall/JAWS/master/jaws-enum.ps1 -O jaws-enum.ps1
+wget https://raw.githubusercontent.com/M4ximuss/Powerless/master/Powerless.bat -O Powerless.bat
+
 #add start python web server script:
 echo "sudo python3 -m http.server 6680" > start-pythonwebserver.sh
 chmod +x start-pythonwebserver.sh
