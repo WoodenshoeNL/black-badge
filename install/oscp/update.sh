@@ -51,9 +51,11 @@ wget https://raw.githubusercontent.com/diego-treitos/linux-smart-enumeration/mas
 chmod +x lse.sh
 
 ##Windows Enumeration
-wget https://raw.githubusercontent.com/rasta-mouse/Sherlock/master/Sherlock.ps1 -O Sherlock.ps1
+wget https://raw.githubusercontent.com/BC-SECURITY/Empire/master/data/module_source/privesc/Sherlock.ps1 -O Sherlock.ps1
 wget https://raw.githubusercontent.com/411Hall/JAWS/master/jaws-enum.ps1 -O jaws-enum.ps1
 wget https://raw.githubusercontent.com/M4ximuss/Powerless/master/Powerless.bat -O Powerless.bat
+wget https://raw.githubusercontent.com/BC-SECURITY/Empire/master/data/module_source/privesc/Invoke-Watson.ps1 -O invoke-watson.ps1
+wget https://raw.githubusercontent.com/BC-SECURITY/Empire/master/data/module_source/privesc/Invoke-winPEAS.ps1 -O invoke-winPEAS.ps1
 
 #add start python web server script:
 echo "sudo python3 -m http.server 6680" > start-pythonwebserver.sh
