@@ -57,6 +57,13 @@ wget https://raw.githubusercontent.com/M4ximuss/Powerless/master/Powerless.bat -
 wget https://raw.githubusercontent.com/BC-SECURITY/Empire/master/data/module_source/privesc/Invoke-Watson.ps1 -O invoke-watson.ps1
 wget https://raw.githubusercontent.com/BC-SECURITY/Empire/master/data/module_source/privesc/Invoke-winPEAS.ps1 -O invoke-winPEAS.ps1
 
+#Empire Recon
+wget https://raw.githubusercontent.com/BC-SECURITY/Empire/master/data/module_source/situational_awareness/host/HostRecon.ps1 -O empire-hostrecon.ps1
+wget https://raw.githubusercontent.com/BC-SECURITY/Empire/master/data/module_source/situational_awareness/host/Invoke-Seatbelt.ps1 -O empire-invoke-seatbelt.ps1
+wget https://raw.githubusercontent.com/BC-SECURITY/Empire/master/data/module_source/situational_awareness/host/Invoke-WinEnum.ps1 -O empire-invoke-winenum.ps1
+wget https://raw.githubusercontent.com/BC-SECURITY/Empire/master/data/module_source/credentials/Invoke-SessionGopher.ps1 -O empire-invoke-sessiongopher.ps1
+wget https://raw.githubusercontent.com/BC-SECURITY/Empire/master/data/module_source/collection/Invoke-SauronEye.ps1 -O empire-invoke-sauroneye.ps1
+
 #add start python web server script:
 echo "sudo python3 -m http.server 6680" > start-pythonwebserver.sh
 chmod +x start-pythonwebserver.sh
