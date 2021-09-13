@@ -22,12 +22,6 @@ git pull >/dev/null
 
 
 ################################################################
-# Refresh Enum
-################################################################
-cd ~
-rm -rf -d enum
-
-################################################################
 # Refresh Recon
 ################################################################
 cd ~
@@ -42,29 +36,14 @@ rm -rf -d script
 cp ~/black-badge/install/oscp/script . -r
 
 ################################################################
-# Refresh Reverse Shell
-################################################################
-cd ~
-rm -rf -d reverse-shell
-#mkdir reverse-shell 2>/dev/null
-#cd reverse-shell
-
-#echo "git clone https://github.com/interference-security/kali-windows-binaries.git 2>/dev/null" > download-kali-windows.sh
-#chmod +x download-kali-windows.sh
-
-#add start python web server script:
-#echo "sudo python3 -m http.server 6443" > start-pythonwebserver.sh
-#chmod +x start-pythonwebserver.sh
-
-################################################################
 # Refresh ip
 ################################################################
 #change ip addresses in scripts
 sed -i "s/10.10.10.10/$ip/g" ~/script/*
 
 #change ip addresses in reverse shell
-sed -i "s/10.10.10.10/$ip/g" ~/reverse-shell/*
-sed -i "s/192.168.254.1/$ip/g" ~/reverse-shell/*
+#sed -i "s/10.10.10.10/$ip/g" ~/reverse-shell/*
+#sed -i "s/192.168.254.1/$ip/g" ~/reverse-shell/*
 
 ################################################################
 # add alias to .zshrc
@@ -101,8 +80,6 @@ sed -i 's/{session_name}-#{window_index}-#{pane_index}-%Y%m%dT%H%M%S.log/{sessio
 #copy tmux config
 rm -f ~/.tmux.conf
 cp ~/black-badge/install/.tmux.conf ~/.tmux.conf
-
-
 
 
 
