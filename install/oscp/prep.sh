@@ -69,8 +69,13 @@ chmod +x ./update-ip.sh
 cd /usr/share/wordlists
 gzip -dq /usr/share/wordlists/rockyou.txt.gz
 
+# copy rockyou to /opt
+cp /usr/share/wordlists/rockyou.txt /opt/rockyou.txt
+
 #unpack sec_lists
 cd ~
+git clone https://github.com/danielmiessler/SecLists.git 2>/dev/null
+cd /opt
 git clone https://github.com/danielmiessler/SecLists.git 2>/dev/null
 
 
