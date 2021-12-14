@@ -417,6 +417,11 @@ cd /usr/share/wordlists; sudo gzip -d /usr/share/wordlists/rockyou.txt.gz;cd ~
 sudo wget https://raw.githubusercontent.com/CiscoCXSecurity/enum4linux/master/enum4linux.pl -O /usr/share/enum4linux/enum4linux.pl
 
 
+## More installs
+
+# install rlwrap
+sudo apt install rlwrap
+
 ################################################################
 # add alias to .zshrc
 ################################################################
