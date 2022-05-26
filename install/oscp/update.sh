@@ -62,6 +62,14 @@ rm -f ~/.tmux.conf
 cp ~/black-badge/install/.tmux.conf ~/.tmux.conf
 
 
+################################################################
+# copy scripts to tmp
+################################################################
+
+cp ~/black-badge-private/tools/get-url.py /tmp/exploit
+chmod +x /tmp/exploit/get-url.py
+
+
 
 echo "################################################################"
 echo "# End"
