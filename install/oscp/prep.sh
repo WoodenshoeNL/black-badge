@@ -44,13 +44,9 @@ chmod +x ~/start-tmux.sh
 echo "tmux a -t attack" > ~/attach-tmux.sh
 chmod +x ~/attach-tmux.sh
 
-#create start htb vpn script:
-echo "sudo openvpn ~/lab/htb/lab_woodenshoe.ovpn" > ~/start-htb-vpn.sh
-chmod +x ~/start-htb-vpn.sh
-
-#create start htb vpn script:
-echo "sudo openvpn ~/lab/oscp/OS-95945-PWK.ovpn" > ~/start-oscp-vpn.sh
-chmod +x ~/start-oscp-vpn.sh
+#copy vpn script:
+cp ~/lab/vpn-scripts/start-*-vpn.sh .
+chmod +x start-*-vpn.sh
 
 #create start update script:
 echo "cd ~/black-badge;git pull;~/black-badge/install/oscp/update.sh" > ~/start-update.sh
@@ -61,6 +57,9 @@ chmod +x ~/start-update.sh
 ################################################################
 cp ~/black-badge/install/oscp/update-ip.sh ./update-ip.sh
 chmod +x ./update-ip.sh
+
+# Switch to root
+sudo su
 
 ################################################################
 # add wordlists
@@ -73,25 +72,8 @@ gzip -dq /usr/share/wordlists/rockyou.txt.gz
 cp /usr/share/wordlists/rockyou.txt /opt/rockyou.txt
 
 #unpack sec_lists
-cd ~
-git clone https://github.com/danielmiessler/SecLists.git 2>/dev/null
 cd /opt
 git clone https://github.com/danielmiessler/SecLists.git 2>/dev/null
-
-
-################################################################
-# add Recon
-################################################################
-cd ~
-rm -rf -d recon
-cp ~/black-badge/install/oscp/recon . -r
-
-################################################################
-# add script
-################################################################
-cd ~
-rm -rf -d script
-cp ~/black-badge/install/oscp/script . -r
 
 
 ################################################################
