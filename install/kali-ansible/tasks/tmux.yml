@@ -1,0 +1,20 @@
+# tasks/tmux.yml  (or paste straight into your playbook)
+- name: Ensure ~/.tmux and ~/.tmux/plugins exist
+  become: true                 # sudo, but…
+  become_user: "{{ ansible_user | default('kali') }}"   # …create as the login user
+  file:
+    path: "{{ item }}"
+    state: directory
+    mode: '0755'
+  loop:
+    - "{{ ansible_env.HOME }}/.tmux"
+    - "{{ ansible_env.HOME }}/.tmux/plugins"
+
+- name: Clone TPM (Tmux Plugin Manager)
+  become: true
+  become_user: "{{ ansible_user | default('kali') }}"
+  ansible.builtin.git:
+    repo: https://github.com/tmux-plugins/tpm.git
+    dest: "{{ ansible_env.HOME }}/.tmux/plugins/tpm"
+    depth: 1          # shallow clone, faster
+    update: yes       # pull if the remote got new commits
