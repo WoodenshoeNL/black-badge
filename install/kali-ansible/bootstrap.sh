@@ -9,5 +9,7 @@ sudo apt install -y git ansible open-vm-tools-desktop
 sudo mkdir -p /share/VMShare
 sudo /usr/bin/vmhgfs-fuse .host:/VMShare /share/VMShare -o subtype=vmhgfs-fuse,allow_other
 
-# 3. Pull and apply your playbook
-sudo ansible-pull -U /share/VMShare/kali-ansible playbook.yml -i localhost,   # :contentReference[oaicite:1]{index=1}
+
+# 3. Run with ansible-playbook
+cd /share/VMShare/kali-ansible
+sudo ansible-playbook -i localhost, -c local playbook.yml
