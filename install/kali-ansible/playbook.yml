@@ -30,10 +30,8 @@
       apt:
         name:
           - zsh
-          - tmux
           - docker.io
           - code
-          - xsel
         state: present
         update_cache: yes
 
@@ -47,4 +45,9 @@
     - name: Run tmux setup
       import_tasks: tasks/tmux.yml 
 
+    - name: Run firefox quiet script
+      import_tasks: tasks/firefox.yml 
+
+    - name: Run firefox quiet script
+      import_tasks: tasks/disable_screen_lock.yml 
 

@@ -1,0 +1,17 @@
+
+- name: Make sure ~/scripts exists
+  file:
+    path: "{{ ansible_env.HOME }}/scripts"   # remote user’s home
+    state: directory
+    mode: "0755"
+
+- name: Copy quiet_firefox.py into ~/scripts
+  copy:
+    src: /share/VMShare/files/quiet_firefox.py   # path on the control node
+    dest: "{{ ansible_env.HOME }}/scripts/quiet_firefox.py"
+    mode: "0755"
+
+- name: Run the script
+  command: python3 "{{ ansible_env.HOME }}/scripts/quiet_firefox.py"
+  args:
+    chdir: "{{ ansible_env.HOME }}/scripts"

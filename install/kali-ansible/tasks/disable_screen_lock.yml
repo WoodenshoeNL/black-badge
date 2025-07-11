@@ -1,0 +1,72 @@
+---
+# tasks/disable_screen_lock.yml
+#
+# ── GNOME ──
+#   • Push a system-wide dconf profile that sets idle-delay = 0
+#     and lock-enabled = false
+#
+# ── XFCE  ──
+#   • Stop light-locker from autostarting
+#   • Flip the xfconf key that tells xfce4-power-manager
+#     not to lock the screen on suspend/hibernate
+#
+# The file is idempotent and safe to run on either DE – tasks that do
+# not apply simply skip.
+
+- name: "GNOME | Install dconf profile that disables screen lock"
+  copy:
+    dest: /etc/dconf/db/local.d/00-screensaver
+    owner: root
+    group: root
+    mode: "0644"
+    content: |
+      [org/gnome/desktop/session]
+      idle-delay=uint32 0
+
+      [org/gnome/desktop/screensaver]
+      lock-enabled=false
+  when: "'gnome' in (ansible_env.XDG_CURRENT_DESKTOP | default('')).lower()"
+
+- name: "GNOME | Lock the keys so users cannot re-enable by mistake (optional)"
+  copy:
+    dest: /etc/dconf/db/local.d/locks/screenlock
+    owner: root
+    group: root
+    mode: "0644"
+    content: |
+      /org/gnome/desktop/session/idle-delay
+      /org/gnome/desktop/screensaver/lock-enabled
+  when: "'gnome' in (ansible_env.XDG_CURRENT_DESKTOP | default('')).lower()"
+
+- name: "GNOME | Re-build system dconf database"
+  command: dconf update
+  changed_when: false
+  when: "'gnome' in (ansible_env.XDG_CURRENT_DESKTOP | default('')).lower()"
+
+# --------------------------------------------------------------------
+
+- name: "XFCE | Make sure light-locker never autostarts"
+  lineinfile:
+    path: /etc/xdg/autostart/light-locker.desktop
+    regexp: '^Hidden='
+    line: 'Hidden=true'
+    create: yes
+  when: "'xfce' in (ansible_env.XDG_CURRENT_DESKTOP | default('')).lower()"
+
+- name: "XFCE | Tell xfce4-power-manager *not* to lock when the system suspends"
+  command: >
+    xfconf-query -c xfce4-power-manager
+                 -p /xfce4-power-manager/lock-screen-suspend-hibernate
+                 -n -t bool -s false
+  become_user: "{{ ansible_user_id }}"
+  changed_when: false
+  ignore_errors: yes
+  when: "'xfce' in (ansible_env.XDG_CURRENT_DESKTOP | default('')).lower()"
+
+# --------------------------------------------------------------------
+
+- name: "OPTIONAL | Copy helper script so you can run the same logic by hand"
+  copy:
+    src: files/disable_lock.py
+    dest: "{{ ansible_env.HOME }}/scripts/disable_lock.py"
+    mode: "0755"
