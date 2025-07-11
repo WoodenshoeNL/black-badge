@@ -16,15 +16,15 @@
         path: /share/VMShare
         state: directory
 
-    - name: Mount VMShare and keep it in /etc/fstab
-      mount:
-        src: ".host:/VMShare"
-        path: /share/VMShare
-        fstype: fuse.vmhgfs-fuse
-        opts: allow_other,auto_unmount,defaults
-        state: mounted
-        dump: 0
-        passno: 0                                   # record in fstab
+#    - name: Mount VMShare and keep it in /etc/fstab
+#      mount:
+#        src: ".host:/VMShare"
+#        path: /share/VMShare
+#        fstype: fuse.vmhgfs-fuse
+#        opts: allow_other,auto_unmount,defaults
+#        state: mounted
+#        dump: 0
+#        passno: 0                                   # record in fstab
 
     - name: Install core packages
       apt:
@@ -32,6 +32,9 @@
           - zsh
           - docker.io
           - code
+          - python3
+          - python3-pip
+          - python3-virtualenv
         state: present
         update_cache: yes
 
